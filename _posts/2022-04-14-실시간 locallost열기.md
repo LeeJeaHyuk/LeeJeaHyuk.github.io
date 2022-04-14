@@ -2,6 +2,7 @@
 layout: single
 tilte: 1
 categories: info
+tag: review
 ---
 
 ## 내가 다시 보려고 적는 실시간 localhost 다시 여는방법
