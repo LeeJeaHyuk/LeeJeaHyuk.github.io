@@ -1,6 +1,6 @@
 ---
 title: "Category"
-layout" categories
+layout: categories
 permalink: /categoties/
 author_profile: true
 sidebar_main: true
