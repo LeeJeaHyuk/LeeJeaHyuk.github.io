@@ -106,7 +106,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Science를 공부하고 있습니다."
   location         : "South Korea"
-  email : pre70u@gmail.com : "pre70u@gmail.com"
+  email            : "pre70u@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
