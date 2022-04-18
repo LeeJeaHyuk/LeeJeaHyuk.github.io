@@ -1,7 +1,5 @@
 ## 내가 다시 보려고 적는 실시간 localhost 다시 여는방법
 
-
-
 1. 깃헙 블로그 폴더 leejeahyuk.github.io에서 powershell열기
 
 2. `bundle exec jekyll serve`
