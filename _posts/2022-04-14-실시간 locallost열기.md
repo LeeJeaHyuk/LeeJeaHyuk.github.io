@@ -1,9 +1,9 @@
----
+<!-- ---
 layout: single
 tilte: 1
 categories: info
 tag: review
----
+--- -->
 
 ## 내가 다시 보려고 적는 실시간 localhost 다시 여는방법
 
@@ -16,6 +16,7 @@ tag: review
 3. ![image-20220415003150461](../images/2022-04-15-실시간 locallost열기/image-20220415003150461.png)
 
 ![image-20220415003150461](../images/2022-04-15-실시간 locallost열기/image-20220415003150461.png)
+
 
 4. 경고 뜨면 `bundle add webrick`
 
