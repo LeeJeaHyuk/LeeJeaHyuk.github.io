@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "나의 첫 merge"
-categories: info
+categories: [info]
 tag : review
 ---
 
