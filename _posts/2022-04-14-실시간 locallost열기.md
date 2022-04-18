@@ -15,6 +15,8 @@ tag: review
 
 3. ![image-20220415003150461](../images/2022-04-15-실시간 locallost열기/image-20220415003150461.png)
 
+![image-20220415003150461](../images/2022-04-15-실시간 locallost열기/image-20220415003150461.png)
+
 4. 경고 뜨면 `bundle add webrick`
 
 5. `bundle exec jekyll serve` 다시 입력
