@@ -1,9 +1,3 @@
----
-title: 실시간 locallost열기
-categories: info
-tag: review
----
-
 ## 내가 다시 보려고 적는 실시간 localhost 다시 여는방법
 
 
