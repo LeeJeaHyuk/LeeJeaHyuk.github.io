@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 1
+title: 실시간 locallost열기
 categories: info
 tag: review
 ---
