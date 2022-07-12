@@ -152,6 +152,50 @@ seq2seq에서 사용되는 어텐션
 
    
 
+## Concatenate
+
+![image-20220712171718831](../../images/Attention/image-20220712171718831.png)
+
+
+$$
+1.\ attention \ score \ value=(s_t)^T \cdot h_i
+\\
+2.\ sum \ attention \ score \ value =[(s_t)^T \cdot h_1,...,(s_t)^T \cdot h_N]= e_t
+\\
+3. \ attention \ distribution = softmax(e_t)=a^t
+\\
+4. \ attention \ value=\sum_{i=1}^Na_i^th_i=a_t
+\\
+$$
+
+1. 어텐션 값이 구해지면 어텐션 메커니즘은 $a_t, s_t$를 결합하여 하나의 벡터로 만드는 작업을 한다.
+
+2. 만들어진 벡터를 $v_t$라 하자
+3. $v_t$를 $\hat y$의 예측 연산의 입력으로 사용한다.
+4. 인코더로부터 얻은 정보로 $\hat y$의 예측 성능을 높힌다.
+
+
+
+![image-20220712175312262](../../images/Attention/image-20220712175312262.png)
+
+1. vt를 바로 출력층으로 보내기 전에 신경망 연산을 한 번 더 추가한다.
+2. 가중치 행렬과 곱한 후에 $tanh$ 함수를 지나도록 한다.
+3. 출력층 연산을 위한 새로운 벡터인 $\tilde{s_t}$를 얻는다.
+4. 어텐션 메커니즘을 사용하지 않는 seq2seq에서는 출력층의 입력이 t시점의 은닉 상태인 $s_t$이다.
+5. 어텐션 메커니즘에서는 출력층의 입력이 $\tilde{s_t}$가 된다.
+
+
+
+
+
+$\tilde{s_t}$를 출력층의 입력으로 사용한다.
+$$
+W_c: 가중치 \ b_c:편향
+\\
+\tilde{s_t}=tanh(W_c[a_t:s_t]+b_c)
+\\
+\hat y_t=Softmax(W_y\tilde{s_t}+b_y)
+$$
 
 
 
