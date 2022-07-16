@@ -1,3 +1,11 @@
+---
+layout: single
+title: "Attention"
+categories: [kaggle_competition]
+tag : [kaggle_competition]
+---
+
+
 # Attention
 
 트랜스포머의 기반이 되는 어탠션 매커니즘
@@ -166,6 +174,7 @@ $$
 \\
 4. \ attention \ value=\sum_{i=1}^Na_i^th_i=a_t
 \\
+
 $$
 
 1. 어텐션 값이 구해지면 어텐션 메커니즘은 $a_t, s_t$를 결합하여 하나의 벡터로 만드는 작업을 한다.
