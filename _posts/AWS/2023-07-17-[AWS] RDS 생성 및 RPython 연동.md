@@ -16,21 +16,21 @@ RDS :  Amazon Relational Database Service
 
 
 
-## RDS 생성
+#RDS 생성
 
-1. 서비스 - RDS - 대시보드 - 데이터베이스 생성
+## 1. 서비스 - RDS - 대시보드 - 데이터베이스 생성
 
 ![image-20230717143744413](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717143744413.png)
 
 
 
-2. 데이터베이스 생성 방식/ 엔진 옵션 설정
+## 2. 데이터베이스 생성 방식/ 엔진 옵션 설정
    - 더 많은 상세옵션을 선택하기 위해서는 표준 생성을 선택해주는 것이 좋다
    - 이 포스트에서는 PostgreSQL 데이터베이스를 사용
 
 ![image-20230717144932898](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717144932898.png)
 
-3. 템플릿
+## 3. 템플릿
    1. 프로덕션 (Production):
       - 이 템플릿은 고가용성과 높은 성능을 위해 기본값을 사용하여 데이터베이스를 생성한다.
       - 프로덕션 환경에서 사용하기에 적합하며, 데이터베이스의 성능과 안정성을 중요시하는 경우에 추천
@@ -45,39 +45,39 @@ RDS :  Amazon Relational Database Service
 
 연습해보는 것이기 때문에 프리 티어를 사용
 
-4. 설정
+## 4. 설정
    1. 사용자 이름과 마스터 암호를 지정
       - postgres_test
       - mypassword
 
 ![image-20230717145357695](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717145357695.png)
 
-5. 인스턴스 크기 지정
+## 5. 인스턴스 크기 지정
    1. 디폴트로 지정되어 있는 db.t3.micro를 사용
 
 ![image-20230717145527147](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717145527147.png)
 
-6. 퍼블릭 엑세스 설정
+## 6. 퍼블릭 엑세스 설정
    1. 퍼블릭 액세스 설정 부분이다. 이번에는 개인 데탑에 R/Python연결 하려고 하기 때문에 퍼블릭 액세스에 예를 해주었다. 사실 이는 어느정도 보안 문제로 충분히 위험할 수 있으며, 이를 아니요로 했을경우에는 EC2에만 연결이 되게 된다. **현업에서 사용하게 된다면 특히 전문가와 상의를 하고 설정하는걸 추천.**
 
 ![image-20230717150432909](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717150432909.png)
 
-7. 데이터베이스 이름 지정
+## 7. 데이터베이스 이름 지정
    1. R/Python 연결시 필요한 정보이다.
       - mydb
 
 ![image-20230717150629361](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717150629361.png)
 
-8. 월별 추정 요금 확인/ 데이터베이스 생성
+## 8. 월별 추정 요금 확인/ 데이터베이스 생성
 
 ![image-20230717150721376](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717150721376.png)
 
-9. RDS 생성
+## 9. RDS 생성
    1. 생성 중인 데이터베이스 모습 10분 정도 걸린 것 같다
 
 ![image-20230717150837312](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717150837312.png)
 
-10. 데이터베이스 정보 확인 (연결 & 보안 Tab)
+## 10. 데이터베이스 정보 확인 (연결 & 보안 Tab)
     1. DB를 클릭하여 정보 확인
        - R/Python에 연결할때 사용되기 때문에 엔드포인트와 포트 번호를 확인
          - database-1.cntx1a14qkyh.us-east-2.rds.amazonaws.com
@@ -85,14 +85,15 @@ RDS :  Amazon Relational Database Service
 
 ![image-20230717152043150](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717152043150.png)
 
-11. 데이터베이스 정보 확인 (구성 Tab)
+## 11. 데이터베이스 정보 확인 (구성 Tab)
     1. DB의 정보 확인 가능
 
 ![image-20230717152333147](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717152333147.png)
 
-12. 사용 중지
+## 12. 사용 중지
     1. 작업 필터 - 중지
-13. RDS - R/Python 연결
+
+## 13. RDS - R/Python 연결
     - pg2.connct()를 사용해 conn을 만들었으면 cursor를 통해 sql문을 주고 받는다. 이후 이 커서 객체인 cur의 execute()명령을 실행하여 SQL쿼리를 실행한다.
 
 ![image-20230717161516395](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717161516395.png)
@@ -100,8 +101,8 @@ RDS :  Amazon Relational Database Service
 - Connection timed out 오류 해결
   - 인스턴스 - 보안 그룹 규칙 - 인바운드 규칙에서 새 인바운드 규칙을 생성 후 현재 ip를 추가하니 실행되었다
 
-14. 데이터 업로드 및 확인
-
+## 14. 데이터 업로드 및 확인
+[실행 코드](https://github.com/LeeJeaHyuk/AWS/blob/main/RDS-Python-connection.ipynb)
 ```python
 import pandas as pd
 
@@ -162,5 +163,4 @@ print(result)
 
 
 ## 참고
-
 https://unfinishedgod.netlify.app/2021/03/05/aws-rds-%EC%83%9D%EC%84%B1-%EB%B0%8F-r-python-%EC%97%B0%EB%8F%99/
