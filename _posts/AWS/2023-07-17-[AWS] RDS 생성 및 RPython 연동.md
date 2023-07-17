@@ -1,3 +1,11 @@
+---
+layout: single
+title: "[AWS] RDS 생성 및 RPython 연동"
+categories: [aws]
+tag : [aws]
+toc : true
+---
+
 RDS :  Amazon Relational Database Service
 
 - 아마존 웹 서비스(AWS)에서 제공하는 관리형 데이터베이스 서비스
