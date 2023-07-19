@@ -16,7 +16,7 @@ EC2 : Elastic Compute Cloud
 
 ![image-20230718143012109](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230718143012109.png)
 
-- 인스턴트 이름 지정
+- 인스턴트 이름 지정 web server test
 
 ![image-20230718143153696](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230718143153696.png)
 
@@ -44,6 +44,83 @@ EC2 : Elastic Compute Cloud
 - "사용 권한"에서 "user"가 포함된 항목들을 삭제하면 해당 키 페어에 대한 액세스 권한을 사용자에게 제한할 수 있게 된다
 
 ![image-20230718162622320](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230718162622320.png)
+
+## 4. 보안 그룹 설정 
+
+- 네트워크 설정 - 방화벽(보안 그룹)
+
+![image-20230719100411349](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230719100411349.png)
+
+- 인바운드 규칙은 3가지를 지정한다 
+  - custum TCP - 특정 TCP 포트나 포트 범위로의 연결만을 허용
+  - ssh - 원격으로 EC2 인스턴스에 접속 
+  - HTTP - 웹 서버와 클라이언트 간의 통신을 위해 사용
+
+![image-20230719101254617](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230719101254617.png)
+
+이후 인스턴스 생성
+
+
+
+## 5. EC2에 연결
+
+인스턴스를 체크하고 연결을 누르면 SSH 클라이언트 창이 보인다
+
+![image-20230719101751363](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230719101751363.png)	
+
+![image-20230719102831584](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230719102831584.png)
+
+터미널을 열고 키페어를 저장한 폴더로 이동한 다음 
+
+위 창에서 보이는SSH를 사용하여 EC2 인스턴스에 원격으로 연결하는 명령어를 사용한다
+
+
+
+## 6. Jupyter Notebook 설정하기
+
+저는 이미 jupyter notebook이 다운로드 되어 있으므로 Anaconda prompt에서 아래 코드를 실행시켜Jupyter configuration 파일을 생성했다
+
+```shell
+jupyter notebook --generate-config
+```
+
+```shell
+ipython
+```
+
+
+
+
+
+```python
+from notebook.auth import passwd
+passwd()
+```
+
+으로 비밀번호를 지정하고 output을 잘 기억해 준다
+
+```shell
+exit
+```
+
+으로 IPython 셸에서 Anaconda Prompt로 돌아올 수 있다
+
+```shell
+cd .jupyter
+vim jupyter_notebook_config.py_
+```
+
+```python
+conf = get_config()
+
+conf.NotebookApp.ip = '0.0.0.0'
+conf.NotebookApp.password = u'YOUR PASSWORD HASH'
+conf.NotebookApp.port = 8888
+```
+
+vim 편집기를 사용하여 해당 부분을 입력해주고 :wq로 저장해준다
+
+
 
 
 
