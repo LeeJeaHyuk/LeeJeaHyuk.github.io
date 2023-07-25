@@ -1,3 +1,11 @@
+---
+layout: single
+title: "EC2 서버에서 Jupyter Notebook 구동하기"
+categories: [aws]
+tag : [aws]
+toc : true
+---
+
 EC2 : Elastic Compute Cloud 
 
 - 클라우드 컴퓨팅 서비스

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[AWS] RDS 생성 및 RPython 연동"
+title: "RDS 생성 및 RPython 연동"
 categories: [aws]
 tag : [aws]
 toc : true
