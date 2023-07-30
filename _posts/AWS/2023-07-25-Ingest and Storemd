@@ -1,10 +1,12 @@
 ---
 layout: single
-title: "Ingest and Store"
-categories: [aws]
-tag : [aws]
+title: "[Analytics on AWS] - Ingest and Store"
+categories: [aws], [Analytics on AWS]
+tag : [aws], [Analytics on AWS]
 toc : true
 ---
+
+![Architecture Diagram](https://static.us-east-1.prod.workshops.aws/public/9b2d1982-fdcf-4207-ba26-71a458796115/static/images/ingest.png?classes=shadow)
 
 - 학습 목표
   - Kinesis 데이터 생성기 유틸리티를 사용하여 실시간으로 더미 데이터를 생성한다
