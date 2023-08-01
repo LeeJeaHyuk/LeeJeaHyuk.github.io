@@ -20,7 +20,7 @@ toc : true
 
 ![image-20230725130637520](../../images/2023-07-25-test/image-20230725130637520.png)
 
-이름만 지정해주고 버킷을 만들어 준다
+이름만 지정해주고 버킷을 만들어 준다 yourname-analytics-workshop-buket
 
 ### 폴더 생성
 
