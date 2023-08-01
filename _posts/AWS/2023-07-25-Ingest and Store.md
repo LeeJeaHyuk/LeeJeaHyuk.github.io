@@ -1,3 +1,4 @@
+---
 layout: single
 title: "[Analytics on AWS] - Ingest and Store"
 categories: [aws]
