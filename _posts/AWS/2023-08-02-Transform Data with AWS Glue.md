@@ -2,7 +2,7 @@
 layout: single
 title: "[Analytics on AWS] - Transform Data with AWS Glue"
 categories: [aws]
-tag : [aws], [Analytics on AWS]
+tag : [aws]
 toc : true
 ---
 
