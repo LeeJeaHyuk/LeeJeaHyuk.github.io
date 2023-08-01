@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "[Analytics on AWS] - Ingest and Store"
-categories: [aws], [Analytics on AWS]
+categories: [aws]
 tag : [aws], [Analytics on AWS]
 toc : true
 ---
