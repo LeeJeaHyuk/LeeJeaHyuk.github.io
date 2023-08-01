@@ -130,6 +130,7 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 
 - raw - 테이블 미리 보기
 
+{% raw %}
 ```sql
 SELECT activity_type,
          count(activity_type)
@@ -137,6 +138,7 @@ FROM raw
 GROUP BY  activity_type
 ORDER BY  activity_type
 ```
+{% endraw %}
 
 - 위 코드를 다른 쿼리 편집기에 코드를 복사하여 실행
 
