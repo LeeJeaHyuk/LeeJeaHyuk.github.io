@@ -80,6 +80,7 @@ toc : true
 
 templete은 [aws workshop Lab guide-ingest and store](https://catalog.workshops.aws/introduction-to-analytics-on-aws/en-US/lab-guide/ingest) 의 Generate Dummy Data - On Amazon Kinesis Data Generator homepage 의 json template부분을 복사해서 넣어준다
 
+{% raw %}
 ```
 {
     "uuid": "{{random.uuid}}",
@@ -97,6 +98,7 @@ templete은 [aws workshop Lab guide-ingest and store](https://catalog.workshops.
     )}}
 }
 ```
+{% endraw %}
 
 - send data를 누른 뒤 10000개가 전송되면 stop해준다
 
