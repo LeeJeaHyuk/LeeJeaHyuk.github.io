@@ -16,6 +16,8 @@ toc : true
 
 ---
 
+
+
 ## 1 S3 버킷 생성
 
 ![image-20230725130637520](../../images/2023-07-25-test/image-20230725130637520.png)
@@ -42,6 +44,8 @@ toc : true
 
 ---
 
+
+
 ## 2 Kinesis Firehose 생성
 
 - aws Kinesis Firehose 에서 스트림 생성을 해준 뒤 아래처럼 설정을 해준다
@@ -55,6 +59,8 @@ toc : true
 - 이외의 값들은 default로 지정해준다
 
 ---
+
+
 
 ## 3 Dummy 데이터 생성
 
@@ -109,6 +115,8 @@ templete은 [aws workshop Lab guide-ingest and store](https://catalog.workshops.
 - s3의 buketㅇ firehose가 yyyy/mm/dd/hh 파티셔닝을 사용하여 데이터를 S3로 덤프 했다는 것을 알 수 있다 
 
 ---
+
+
 
 ## reference
 

@@ -73,9 +73,9 @@ toc : true
 
 ![image-20230802140943872](../../images/2023-08-01-Transform Data with AWS Glue/image-20230802140943872.png)
 
-
-
 ---
+
+
 
 ## 대화형 ETL 개발을 위해 AWS Glue에서 Jupyter Notebook 사용
 
@@ -116,8 +116,6 @@ except Exception as ex:
 - jupyter notebook을 읽으면서 실행
 - path 부분만 이전에 생성한 s3 경로로 바꾸기
 
-
-
 ---
 
 
@@ -140,9 +138,9 @@ except Exception as ex:
 - 데이터를 변환했기에 Amazon Athena를 사용하여 데이터를 쿼리할 수 있다
 - AWS Glue 또는 Amazon EMR을 사용하여 데이터를 추가로 변환/집계할 수도 있다
 
-
-
 ---
+
+
 
 ## reference
 

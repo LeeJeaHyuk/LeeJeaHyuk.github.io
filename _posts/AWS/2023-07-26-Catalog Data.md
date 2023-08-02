@@ -54,9 +54,9 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 
 - 이전에 추가한 AWSGlueServiceRole 와 AnalyticsworkshopGlueRole 이 존재하는지 확인하고 역할 생성을 클릭
 
-
-
 ---
+
+
 
 ## AWS Glue Crawlers 생성
 
@@ -98,6 +98,8 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 
 ---
 
+
+
 ## 카탈로그에서 새로 생성 된 테이블 확인
 
 - [Glue 카탈로그](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases)로 이동
@@ -110,9 +112,9 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 - table의 raw를 확인하여 데이터세트의 스키마를 둘러보고 탐색할 수 있다
   - `averageRecordSize`, `recordCount`, `compressionType` 등
 
-
-
 ---
+
+
 
 ## Amazon Athena를 사용하여 수집 된 데이터 쿼리
 
@@ -148,6 +150,8 @@ ORDER BY  activity_type
 - 이후 AWS Glue ETL을 사용하여 데이터를 변환할 수 있다.
 
 ---
+
+
 
 ## reference
 
