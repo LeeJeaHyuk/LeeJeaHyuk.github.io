@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "pytorch tutorial"
+title: "pytorch tutorial - 1.tensor"
 categories: [pytorch]
 tag : [pytorch]
 toc : true
@@ -47,6 +47,8 @@ toc : true
 
 ## Initializing a Tensor
 
+{% raw %}
+
 ```python
 import torch
 import numpy as np
@@ -67,6 +69,8 @@ x_rand = torch.rand_like(x_data, dtype=torch.float) # overrides the datatype of 
 print(f"Random Tensor: \n {x_rand} \n")
 ```
 
+{% endraw %}
+
 ![image-20230812163313158](../../images/2023-08-12 pyhotch tutorial/image-20230812163313158.png)
 
 - torch.ones_like는 1로 된 tensor를 생성
@@ -78,6 +82,8 @@ print(f"Random Tensor: \n {x_rand} \n")
 
 ## Attributes of a Tensor
 
+{% raw %}
+
 ```python
 tensor = torch.rand(3,4)
 
@@ -85,6 +91,8 @@ print(f"Shape of tensor: {tensor.shape}")
 print(f"Datatype of tensor: {tensor.dtype}")
 print(f"Device tensor is stored on: {tensor.device}")
 ```
+
+{% endraw %}
 
 ![image-20230812164404448](../../images/2023-08-12 pyhotch tutorial/image-20230812164404448.png)
 
@@ -95,6 +103,8 @@ print(f"Device tensor is stored on: {tensor.device}")
 
 
 ## Operations on Tensors
+
+{% raw %}
 
 ```python
 # We move our tensor to the GPU if available
@@ -109,16 +119,24 @@ tensor[:,1] = 0 # 두번쨰 열의 요소를 전부 0으로
 print(tensor)
 ```
 
+{% endraw %}
+
 ![image-20230812164929395](../../images/2023-08-12 pyhotch tutorial/image-20230812164929395.png)
+
+{% raw %}
 
 ```python
 t1 = torch.cat([tensor, tensor, tensor], dim=1) # concatenate와 비슷한 역할을 하는 듯
 print(t1)
 ```
 
+{% endraw %}
+
 - .cat 텐서를 붙이는 역할(concatnate)
 
 ![image-20230812165720593](../../images/2023-08-12 pyhotch tutorial/image-20230812165720593.png)
+
+{% raw %}
 
 ```python
 # 두 텐서 간 행렬곱. y1, y2, y3 will have the same value
@@ -139,6 +157,8 @@ print(z3)
 torch.mul(tensor, tensor, out=z3) # tensor와 tensor의 요소별 곱셈을 구하여 z3에 저장
 ```
 
+{% endraw %}
+
 - tensor.T : transpose(전치행렬)
 - torch.rand.like(z3) z3텐서와같은 크기를 가지고 모든 요소를 0과 1사이의 랜덤 값으로 배치한다
 - 행렬곱
@@ -152,7 +172,7 @@ torch.mul(tensor, tensor, out=z3) # tensor와 tensor의 요소별 곱셈을 구�
 
 - torch.mul(tensor, tensor. out=z3)의 결과를 보면 알 수 있듯이 요소간 곱셈이기때문에 1과 1이 곱해져서 tensor값이 그대로 나온 것을 볼 수 있다.
 
-
+{% raw %}
 
 ```python
 agg = tensor.sum() # tensor의 모든 요소를 더한 1차원 텐서를 만든다
@@ -162,10 +182,16 @@ agg_item = agg.item() # 텐서의 모든 요소를 더하여 float형으로 반�
 print(agg_item, type(agg_item))
 ```
 
+{% endraw %}
+
 - tensor.sum()은 tensor의 모든 요소를 1차원으로 만들어준다
 - agg.item은 텐서의 모든 요소를 더해서 float형태로 바꾸어주는데 텐서가 단일 스칼라 값을 가질 때에만 사용할 수 있으므로 .sum 이후에 사용해주어야 한다
 
 ![image-20230812182103214](../../images/2023-08-12 pyhotch tutorial/image-20230812182103214.png)
+
+{% raw %}
+
+{% endraw %}
 
 ```python
 # 모든 요소에 더하기
@@ -173,6 +199,8 @@ print(f"{tensor} \n")
 tensor.add_(5)
 print(tensor)
 ```
+
+{% endraw %}
 
 ![image-20230812182248825](../../images/2023-08-12 pyhotch tutorial/image-20230812182248825.png)
 
@@ -184,6 +212,8 @@ print(tensor)
 
 ## Bridge with NumPy
 
+{% raw %}
+
 ```python
 n = np.ones(5)
 t = torch.from_numpy(n) # n NumPy 배열을 PyTorch 텐서로 변환하여 t에 저장
@@ -192,6 +222,8 @@ np.add(n, 1, out=n) # numpy에 전부 1을 더했지만 tensor까지 모두 1이
 print(f"t: {t}")
 print(f"n: {n}")
 ```
+
+{% endraw %}
 
 - 텐서와 Numpy배열은 CPU상에서 메모리를 공유할 수 있으며, 하나를 변경하면 다른 하나도 변경된다.
 
