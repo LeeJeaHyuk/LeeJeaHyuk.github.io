@@ -191,8 +191,6 @@ print(agg_item, type(agg_item))
 
 {% raw %}
 
-{% endraw %}
-
 ```python
 # 모든 요소에 더하기
 print(f"{tensor} \n")
