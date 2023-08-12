@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "pytorch tutorial - 1.tensor"
+title: "PyTorch Tutorial - 1.Tensor"
 categories: [pytorch]
 tag : [pytorch]
 toc : true
@@ -238,6 +238,6 @@ print(f"n: {n}")
 
 ## reference
 
-튜토리얼 링크 - https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html
+[해당 튜토리얼 링크](https://pytorch.org/tutorials/beginner/basics/tensorqs_tutorial.html)
 
-실습한 파일 링크 - https://github.com/LeeJeaHyuk/dacon/blob/master/torch_tutorial/1_Tensors.ipynb
+[실습한 파일 링크](https://github.com/LeeJeaHyuk/dacon/blob/master/torch_tutorial/1_Tensors.ipynb)
