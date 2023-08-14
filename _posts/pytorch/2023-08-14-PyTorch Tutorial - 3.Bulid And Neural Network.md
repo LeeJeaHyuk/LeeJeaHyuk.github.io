@@ -128,7 +128,7 @@ print(flat_image.size())
 
 - flatten으로 평탄화시킨다 
 
-![image-20230814184857925](../../images/2023-08-14-PyTorch Tutorial - 3.Bulid And Neural Network/image-20230814184857925.png)
+![image-20230814212603450](../../images/2023-08-14-PyTorch Tutorial - 3.Bulid And Neural Network/image-20230814212603450.png)
 
 ---
 
@@ -283,4 +283,4 @@ summary(model, input_size=(3, 28, 28))
 
 [해당 튜토리얼 링크](https://pytorch.org/tutorials/beginner/basics/buildmodel_tutorial.html)
 
-[실습한 코드 링크]()
+[실습한 코드 링크](https://github.com/LeeJeaHyuk/dacon/blob/master/torch_tutorial/4_Build%20The%20Neural%20Network.ipynb)
