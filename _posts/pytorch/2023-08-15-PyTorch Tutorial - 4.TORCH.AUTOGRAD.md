@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "PyTorch Tutorial - 3.TORCH.AUTOGRAD"
+title: "PyTorch Tutorial - 4.TORCH.AUTOGRAD"
 categories: [pytorch]
 tag : [pytorch]
 toc : trues
