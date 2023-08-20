@@ -72,8 +72,8 @@
 }
 
 .sidebar__right {
-  transition: top 0.3s ease; // sidebar 같이 내려가도록
   margin-bottom: 1em;
+  position: relative; /* 부모 기준으로 top 위치 조절 */
 
   @include breakpoint($large) {
     position: absolute;
@@ -98,6 +98,10 @@
         }
       }
     }
+  }
+
+  .sidebar__right.scroll-down {
+    top: 50px; /* 원하는 위치로 조절 */
   }
 
   @include breakpoint($x-large) {
