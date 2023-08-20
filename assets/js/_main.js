@@ -134,18 +134,4 @@ $(document).ready(function() {
     }
   });
 
-
-  $(window).on("scroll", function() {
-    // 현재 활성화된 섹션(소제목)의 ID 가져오기
-    var activeSectionId = $(".toc .active").attr("href");
-
-    if (activeSectionId) {
-      // 섹션(소제목)의 위치 가져오기
-      var sectionOffset = $(activeSectionId).offset().top;
-
-      // 오른쪽 사이드바 이동
-      $(".sidebar__right").css("top", sectionOffset + "px");
-    }
-  });
-  
 });
