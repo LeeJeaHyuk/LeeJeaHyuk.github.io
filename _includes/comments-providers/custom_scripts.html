@@ -2,30 +2,4 @@
 
 <!-- end custom comments scripts -->
 
-<script>
-    $(document).ready(function() {
-      // 스크롤 위치가 변경될 때마다 실행되는 함수
-      $(window).scroll(function() {
-        // 스크롤 위치를 가져옴
-        var scrollPosition = $(this).scrollTop();
-  
-        // 각각의 소제목 요소에 대해서 처리
-        $('.post-content h2[id]').each(function() {
-          var id = $(this).attr('id'); // 소제목의 id 얻기
-          var position = $('#' + id).offset().top; // 해당 id 위치 얻기
-          var sidebar = $('.sidebar__right'); // 사이드바 요소
-  
-          // 스크롤 위치가 해당 id 위치보다 아래에 있을 경우
-          if (scrollPosition >= position) {
-            // 사이드바의 위치 조정
-            sidebar.addClass('scroll-down');
-          } else {
-            // 스크롤 위치가 해당 id 위치보다 위에 있을 경우
-            // 사이드바의 위치를 원래 상태로 복원
-            sidebar.removeClass('scroll-down');
-          }
-        });
-      });
-    });
-  </script>
   
