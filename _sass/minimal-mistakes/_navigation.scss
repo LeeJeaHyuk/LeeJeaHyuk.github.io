@@ -437,6 +437,22 @@
   }
 }
 
+/* 스크롤을 내릴 때 메뉴가 아래로 이동 */
+.nav__list.scrolled {
+  top: -100px; /* 메뉴 높이 만큼 이동 */
+}
+
+/* 스크롤을 내릴 때 메뉴를 상단에 고정 */
+.nav__list.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white; /* 메뉴 배경색 설정 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+
 .nav__list .nav__items {
   margin: 0;
   font-size: 1.25rem;

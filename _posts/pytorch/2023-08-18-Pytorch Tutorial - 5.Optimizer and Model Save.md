@@ -213,10 +213,10 @@ def test_loop(dataloader, model, loss_fn):
 
 - test_loop
     - 이 함수는 주어진 데이터로더(dataloader), 모델(model), 손실 함수(loss_fn)를 사용하여 모델의 성능을 평가하는 역할을 합니다.
-    - 모델을 평가 모드로 설정
+    - model.eval() 로 모델을 평가 모드로 설정
     - 데이터셋의 크기와 미니배치의 수를 가져온 후, test_loss와 correct 변수를 초기화
-    - torch.no_grad() 블록 안에서, 데이터로더에서 미니배치를 가져오며 모델을 사용해 입력 데이터를 예측
-    - 예측과 실제 타겟 간의 손실을 누적하여 test_loss에 추가하고, 정확하게 예측한 개수를 세어 correct에 추가
+    - test_loss += loss_fn(pred, y).item() : 모델이 각 미니배치에서 만든 예측과 해당하는 정답을 비교하여 손실을 계산하고, 이 손실을 `test_loss`에 누적하여 전체 평가 데이터셋에 대한 총 손실을 구한다.
+    - correct += (pred.argmax(1) == y).type(torch.float).sum().item() : 모델의 예측값과 실제 정답을 비교하여 맞은 샘플의 수를 계산하고, 이 값을 `correct`에 누적하여 전체 평가 데이터셋에 대한 총 정확한 예측 수를 구한다
     - 마지막으로 test_loss와 정확도를 계산하여 출력
 
 
@@ -239,9 +239,13 @@ print("Done!")
 
 ![image-20230818145536354](../../images/2023-08-18-Pytorch Tutorial - 5.Optimizer and Model Save/image-20230818145536354.png)
 
-- 
+- 각 미니배치의 손실 값과 처리된 샘플의 수를 확인할 수 있다.
 
+- 최종적으로 정확도와 평균 손실 값을 확인할 수 있다.
 
+  
+
+---
 
 ## SAVE AND LOAD THE MODEL
 
@@ -256,9 +260,11 @@ import torchvision.models as models
 
 
 
+---
+
 ## Saving and Loading Model Weights
 
-PyTorch 모델은 state_dict라는 내부 상태 사전에 학습된 매개변수를 저장한다. 이는 torch.save 메소드를 통해 유지될 수 있다	
+PyTorch 모델은 state_dict라는 내부 상태 사전에 학습된 매개변수를 저장한다. 이는 torch.save 메소드를 통해 유지될 수 있다.
 
 {% raw %}
 
@@ -269,7 +275,8 @@ torch.save(model.state_dict(), 'model_weights.pth')
 
 {% endraw %}
 
-모델 가중치를 불러오려면 먼저 동일한 모델의 인스턴스를 생성한 다음 load_state_dict() 메서드를 사용하여 매개변수를 불러와야 한다
+- torchvision에서 제공하는 `models` 모듈을 사용하여 미리 학습된 VGG16 아키텍처를 불러온다
+- 불러온 모델의 가중치를 model_weights.pth 파일에 저장한다
 
 {% raw %}
 
@@ -281,24 +288,43 @@ model.eval()
 
 {% endraw %}
 
+- 학습되지 않은 vgg16 아키텍처를 불러온다
+-  미리 학습된 모델 가중치를 저장한 'model_weights.pth' 파일을 불러와서 모델에 적용한다
+- 모델 평가
+
+
+
 ![image-20230818145703700](../../images/2023-08-18-Pytorch Tutorial - 5.Optimizer and Model Save/image-20230818145703700.png)
+
+- VGG16 아키텍처의 구조를 확인할 수 있다.
+
+
 
 ## Saving and Loading Models with Shapes
 
-- 모델 클래스는 신경망의 구조를 정의하며, 모델 가중치는 이 구조에 맞게 저장된다
-- 모델의 구조를 가중치와 함께 저장하는 것이 유용할 수도 있다. 이때 model 객체를 저장 함수에 전달하여 모델의 구조와 가중치를 함께 저장할 수 있다. 
+- 기본적으로 PyTorch의 `torch.save()` 함수는 모델의 가중치를 저장할 때 모델의 구조 정보는 저장하지 않는다. 그래서 모델을 불러올 때에는 미리 모델 클래스의 구조를 정의한 후에 가중치를 불러와야 한다.
+- 그래서 모델의 구조와 가중치를 함께 저장하고 불러오기 위해 `model` 객체를 사용하면 모델 클래스를 별도로 정의할 필요가 없다.
 - model.state_dict()는 모델의 가중치 정보만을 나타내며, 이보다는 모델 자체를 저장하면 모델의 구조와 가중치를 모두 포함할 수 있다
 
 {% raw %}
 
 ```python
+# 저장
 torch.save(model, 'model.pth')
-model = torch.load('model.pth')
+
+# 불러오기
+loaded_model = torch.load('model.pth')
+
+# 모델을 평가
+loaded_model.eval()
+
+# 불러온 모델을 사용하여 추론 등 수행
+output = loaded_model(input_data)
 ```
 
 {% endraw %}
 
-- Bulid 
+- 모델 클래스와 가중치를 저장하고 불러오면, 모델의 구조를 별도로 정의하지 않고도 모델을 사용할 수 있다 .
 
 ---
 
