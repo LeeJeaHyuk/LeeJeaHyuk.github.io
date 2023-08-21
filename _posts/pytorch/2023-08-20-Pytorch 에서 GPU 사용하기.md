@@ -37,7 +37,7 @@ PyTorch 실습 중 CPU만을 사용하여 신경망을 훈련하던 중, GPU를 
 
 [NVIDIA 드라이버](https://www.nvidia.com/Download/index.aspx?lang=kr)를 다운로드 받는 사이트로 들어가서 pc에 맞는 드라이버를 설치해 준다.
 
-![image-20230820193147516](../../images/2023-08-20-Pytorch 에서 GPU 사용하기/image-20230820193147516.png)
+![image-20230822002627329](../../images/2023-08-20-Pytorch 에서 GPU 사용하기/image-20230822002627329.png)
 
 그래픽카드의 종류는 장치 관리자에서 디스플레이 어댑터를 확인하면 찾을 수 있다.
 
