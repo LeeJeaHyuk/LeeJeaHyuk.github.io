@@ -176,17 +176,66 @@ docker images
 
 
 
-## 10 docker container 생성
+## 10 docker image docker hub에서 가져오기
 
-dockerfile을 사용해 docker container를 생성한다 Pytorch를 사용하기 위한 모든 패키지를 적어서 생성해보았다.
-
-
+[테디노트](https://www.youtube.com/watch?v=Tw7dU-9AkmU&ab_channel=%ED%85%8C%EB%94%94%EB%85%B8%ED%8A%B8TeddyNote)님이 만들어 놓은 docker hub에서 클론해와서 image를 클론해와서
 
 
+
+{% raw %}
+
+```bash
+docker pull teddylee777/deepko
+```
+
+{% endraw %}
+
+
+
+nvdia toolkit 설치
+
+{% raw %}
+
+```bash
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
+```
+
+{% endraw %}
+
+{% raw %}
+
+```bash
+docker run -it --gpus all --name deeplearning teddylee777/deepko /bin/bash
+```
+
+{% endraw %}
+
+- teddylee777/deepko 이미지를 실행시켜서 deeplearning이름의 컨테이너가 만들어짐
+
+{% raw %}
+
+```wsl
+torch.cuda.is_available()
+```
+
+{% endraw %}
+
+- GPU사용되는지 확인
+
+ctrl + D
 
 ## 11 vscode와 연결
 
 ![image-20230824195605786](../../images/2023-08-24 cudatoolkit 버전 관리를 위한 docker 설치/image-20230824195605786.png)
+
+- vscode에서 위의 extenstion을 설치한다 
+
+
 
 ---
 
@@ -197,3 +246,7 @@ https://velog.io/@hanjuli94/%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90%EC%84%9C-%EB%8F
 https://shuka.tistory.com/18
 
 https://greeksharifa.github.io/references/2021/06/21/Docker/
+
+https://www.youtube.com/watch?v=Tw7dU-9AkmU&ab_channel=%ED%85%8C%EB%94%94%EB%85%B8%ED%8A%B8TeddyNote
+
+http://daddynkidsmakers.blogspot.com/2023/02/nvidia-gpu-cuda.html
