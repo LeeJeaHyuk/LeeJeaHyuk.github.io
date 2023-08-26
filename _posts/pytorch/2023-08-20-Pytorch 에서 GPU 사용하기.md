@@ -27,6 +27,7 @@ device = (
 PyTorch 실습 중 CPU만을 사용하여 신경망을 훈련하던 중, GPU를 활용하기 위해서는 추가적인 설치 및 설정이 필요한 것을 확인하게 되었다. 그래서 이번 블로그에서는 GPU를 사용하여 PyTorch 신경망을 훈련하는 과정을 공유하고자 한다.
 
 - **NVIDIA GPU 드라이버 설치**
+- **Pytorch 와 Tensorflow 호환 버전 확인**
 - **CUDA Toolkit 설치**
 
 
@@ -49,6 +50,22 @@ PyTorch 실습 중 CPU만을 사용하여 신경망을 훈련하던 중, GPU를 
 
 - 다운로드가 완료되면 설치 해 준다.
 - 이후 모든 설정을 defult값으로 설치하였다.
+
+
+
+---
+
+## **Pytorch 와 Tensorflow 호환 버전 확인**
+
+[Tensorflow window 호환 버전 확인](https://www.tensorflow.org/install/source_windows?hl=ko#tested_build_configurations)
+
+[Pytorch 호환 버전 확인](https://pytorch.org/get-started/previous-versions/)
+
+
+
+tensorflow 와 pytorch를 둘 다 GPU를 사용하고 싶기 때문에 두 버전이 호환되는 cuda toolkit을 다운받으려 한다
+
+![image-20230822130454674](../../images/2023-08-20-Pytorch 에서 GPU 사용하기/image-20230822130454674.png)
 
 
 
