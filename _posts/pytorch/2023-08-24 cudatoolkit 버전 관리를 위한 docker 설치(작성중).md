@@ -209,13 +209,14 @@ sudo systemctl restart docker
 
 {% raw %}
 
-```bash
+```wsl
 docker run -it --gpus all --name deeplearning teddylee777/deepko /bin/bash
 ```
 
 {% endraw %}
 
 - teddylee777/deepko 이미지를 실행시켜서 deeplearning이름의 컨테이너가 만들어짐
+- docker cp를 사용하여 파일 복사해서 이동
 
 {% raw %}
 
@@ -236,6 +237,34 @@ ctrl + D
 - vscode에서 위의 extenstion을 설치한다 
 
 
+
+{% raw %}
+
+```wsl
+docker cp C:\GitHub deeplearning:/root/data
+```
+
+{% endraw %}
+
+
+
+gpu가 작동하는지 확인
+
+![image-20230827132502887](../../images/2023-08-24 cudatoolkit 버전 관리를 위한 docker 설치(작성중)/image-20230827132502887.png)
+
+
+
+익스텐션과 파일을 옮긴 후 commit 
+
+{% raw %}
+
+```wsl
+docker commit 1e0b jh/dl01
+```
+
+{% endraw %}
+
+![image-20230827132420221](../../images/2023-08-24 cudatoolkit 버전 관리를 위한 docker 설치(작성중)/image-20230827132420221.png)
 
 ---
 
