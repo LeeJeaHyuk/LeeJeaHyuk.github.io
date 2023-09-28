@@ -17,8 +17,6 @@ toc : true
 
 Dataview는 크게 3종류의 시각적 표현 방식을 제공하는데 이는 "Table," "List," "Task"이다.
 
-
-
 ---
 
 ## Table
@@ -46,8 +44,6 @@ Dataview는 크게 3종류의 시각적 표현 방식을 제공하는데 이는 
 ![제목 없음](../../images/Obsidian Plugin(1) Dataview and Tasks/제목 없음.png)
 신입 태그의 모든 정보를 가져와서 만든 날짜와 아까 지정한 내가 준비하려고 하는 요구사항들을 한눈에 볼 수 있게 된다. 또한 File열에서 각각의 파일과 연결되어있기 때문에 추가적인 정보를 확인하고 싶으면 바로 링크를 따라서 들어갈 수 있다.
 
-
-
 ---
 
 ## list
@@ -56,6 +52,8 @@ Dataview에서 list는 특정 Tag들을 가져와서 한눈에 볼 수 있게 �
 Obsidian에서는 마인드맵을 작성할 때 처럼 계속해서 꼬리를 물고 파일들이 이어질 수 있는데 각각의 파일을 한번에 완성시키지 못할 때가 있다. 이 경우에 나는 Incomplete 라는 Tag를 지정하여 한번에 불완전한 파일들을 몰아볼 수 있게 된다.
 
 ![list](../../images/Obsidian Plugin(1) Dataview and Tasks/list.png)
+
+---
 
 ## Task
 
@@ -84,8 +82,6 @@ Obsidian에서는 마인드맵을 작성할 때 처럼 계속해서 꼬리를 �
 
 ![image-20230928214125471](../../images/Obsidian Plugin(1) Dataview and Tasks/image-20230928214125471.png)
 
-
-
 ---
 
 ## 마치며
@@ -94,7 +90,7 @@ Obsidian에서는 마인드맵을 작성할 때 처럼 계속해서 꼬리를 �
 
 다음 포스트에는 저장과 이미지 경로를 지정하는 플러그인을 소개해보려고 한다.
 
-
+Next Post : []()
 
 ---
 
