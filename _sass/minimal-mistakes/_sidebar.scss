@@ -356,3 +356,34 @@
   }
 }
 
+.sidebar-categories {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.sidebar-categories h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sidebar-categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-categories li {
+  margin-bottom: 5px;
+}
+
+.sidebar-categories a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.sidebar-categories a:hover {
+  text-decoration: underline;
+}

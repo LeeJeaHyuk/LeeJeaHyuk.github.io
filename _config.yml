@@ -70,6 +70,12 @@ algolia:
 google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
+
+# Sidebar 설정 추가
+sidebar:
+  nav: "main"  # _data/navigation.yml의 "main" 메뉴를 사이드바에 표시
+  sticky: true # 스크롤 시 사이드바가 고정되도록 설정
+
 # SEO Related
 google_site_verification :
 bing_site_verification   :
