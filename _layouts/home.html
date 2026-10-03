@@ -4,8 +4,6 @@ layout: archive
 
 {{ content }}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-
 {% if paginator %}
   {% assign posts = paginator.posts %}
 {% else %}
@@ -13,10 +11,51 @@ layout: archive
 {% endif %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
-</div>
+{% assign visible_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
+<div class="home-columns">
+  <section class="home-posts" aria-labelledby="recent-posts-title">
+    <div class="home-posts__heading">
+      <h2 id="recent-posts-title">최근 기록</h2>
+      <a href="{{ '/posts/' | relative_url }}">전체 글 {{ visible_posts.size }}편</a>
+    </div>
+    <div class="entries-{{ entries_layout }}">
+      {% for post in posts %}
+        {% unless post.hidden %}
+          {% include archive-single.html type=entries_layout %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    {% include paginator.html %}
+  </section>
 
-{% include paginator.html %}
+  <aside class="home-index" aria-label="기록 탐색">
+    <section aria-labelledby="topics-title">
+      <h2 id="topics-title">주제별로 읽기</h2>
+      <ul class="home-index__topics">
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+          <li>
+            <a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify | downcase }}">
+              <span>{{ category[0] | escape }}</span>
+              <span class="home-index__count">{{ category[1].size }}<span class="sr-only">편</span></span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section aria-labelledby="years-title">
+      <h2 id="years-title">연도별 기록</h2>
+      <ul>
+        {% assign years = visible_posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
+        {% for year in years %}
+          <li><a href="{{ '/posts/' | relative_url }}#{{ year.name }}"><span>{{ year.name }}</span><span class="home-index__count">{{ year.items.size }}<span class="sr-only">편</span></span></a></li>
+        {% endfor %}
+      </ul>
+    </section>
+    <div class="home-index__author">
+      <p>이재혁</p>
+      <a href="{{ '/about/' | relative_url }}">소개</a>
+      <a href="https://github.com/LeeJeaHyuk">GitHub</a>
+    </div>
+  </aside>
+</div>
