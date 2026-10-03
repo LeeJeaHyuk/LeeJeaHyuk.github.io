@@ -15,22 +15,22 @@
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "kr-KR"
-title                    : "공부 연습장"
+locale                   : "ko-KR"
+title                    : "이재혁의 엔지니어링 기록"
 title_separator          : "|"
-subtitle                 : ""
+subtitle                 : "AI systems, decisions, and lessons"
 name                     : "이재혁"
-description              : "안녕하세요"
+description              : "로컬 LLM, AI 에이전트, 데이터 파이프라인을 실제로 운영하며 발견한 문제와 선택, 결과를 기록합니다."
 url                      : "https://leejeahyuk.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "LeeJeaHyuk.github.io"
+repository               : "LeeJeaHyuk/LeeJeaHyuk.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               :  "giscus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : false # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -59,8 +59,8 @@ reCaptcha:
 atom_feed:
   path                   : # blank (default) uses feed.xml
   hide                   : # true, false (default)
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
 search_provider          : # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
@@ -110,7 +110,7 @@ analytics:
 author:
   name             : "이재혁"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Data Science를 공부하고 있습니다."
+  bio              : "AI 시스템을 만들고, 측정하고, 선택의 근거를 기록합니다."
   location         : "South Korea"
   email            : "pre70u@gmail.com"
   links:
@@ -224,7 +224,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: #
+timezone: Asia/Seoul
 
 
 # Plugins (previously gems:)
@@ -289,11 +289,11 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: # true
-      share: true
-      related: true
+      share: false
+      related: false
       show_date : true
 
 date_format: "%Y-%m-%d"

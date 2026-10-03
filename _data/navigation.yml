@@ -1,20 +1,9 @@
-# main links
 main:
-  - title: "Category"
+  - title: "글"
+    url: /posts/
+  - title: "주제"
     url: /categories/
-
-# # main links
-# main:
-#   - title: "Category"
-#   url: /categories/
-#   - title: "Tag"
-#   url: /tags/
-#   # - title: "About"
-#   #   url: https://mmistakes.github.io/minimal-mistakes/about/
-#   # - title: "Sample Posts"
-#   #   url: /year-archive/
-#   # - title: "Sample Collections"
-#   #   url: /collection-archive/
-#   # - title: "Sitemap"
-#   #   url: /sitemap/
-
+  - title: "태그"
+    url: /tags/
+  - title: "소개"
+    url: /about/
