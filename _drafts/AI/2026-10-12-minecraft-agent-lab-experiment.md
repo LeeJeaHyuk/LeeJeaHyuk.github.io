@@ -10,7 +10,6 @@ permalink: /ai/minecraft-agent-lab-experiment/
 excerpt: "Qwen·Kev로 채집·제작·귀가를 연결한 실행 조건과 결과, 전투 중단·재개 구조, 크리퍼 피해와 남은 과제를 기록한다."
 toc: true
 toc_label: "이 글의 내용"
-draft: true
 ---
 
 Minecraft Agent Lab은 Qwen3.8-27B의 계획, Kev-4B의 행동 선택, Mineflayer의 실행, 로컬 피해 반응 코드로 구성했다. 개발 실행에서 야간 채집·제작·귀가와 전투 후 작업 재개를 관찰했다. 실행 환경, 모델·코드 버전, 처리 순서, 관찰 결과와 제약조건을 기록한다.

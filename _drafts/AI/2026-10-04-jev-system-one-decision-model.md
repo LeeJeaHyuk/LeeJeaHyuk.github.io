@@ -10,7 +10,6 @@ permalink: /ai/jev-system-one-decision-model/
 excerpt: "Jev의 choice·score·noul과 확률을 읽는 법, Kev의 공개 구현, 출력 제한과 판단 품질의 차이를 정리한다."
 toc: true
 toc_label: "이 글의 내용"
-draft: true
 ---
 
 에이전트의 다음 행동을 프로그램에 연결하려면 출력 형식과 선택의 의미를 함께 정해야 한다. Jev는 상황을 읽고 미리 정의한 질문에 결정과 확률을 반환하는 TypeSafe의 모델이다. LLM·에이전트의 기초를 아는 개발자를 위해 질문 유형, 확률을 읽는 법, 공개 구현인 Kev와의 차이를 정리한다.

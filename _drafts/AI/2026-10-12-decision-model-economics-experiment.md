@@ -10,7 +10,6 @@ permalink: /ai/decision-model-economics-experiment/
 excerpt: "경제 프로젝트의 판단 부분을 나누어 결정 모델로 바꾸고 기존 방식과 비교한 내용을 기록한다."
 toc: true
 toc_label: "이 글의 내용"
-draft: true
 ---
 
 경제 프로젝트의 기존 프로세스에서 판단이 필요한 부분을 각각 선별했다. 각 부분을 결정 모델 방식으로 바꾸고 기존 방식과 비교했다.

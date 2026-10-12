@@ -9,7 +9,6 @@ tags: [생각, Jev, Kev, DecisionModel, AIAgent]
 permalink: /ai/decision-model-economics/
 excerpt: "Jev에 관심을 가진 계기와 공개 결정 모델의 활용 사례를 따라가며, 경제 프로젝트의 작은 판단부터 바꿔보기로 한 과정을 기록한다."
 toc: false
-draft: true
 ---
 
 얼마 전 OpenAI에서 연구했던 사람이 만든 Jev가 환각이 없다는 소개를 봤다. 최근에는 비슷한 방식의 결정 모델들이 Hugging Face에서 오픈소스로 공유되고, 실제로 사용하는 사례들도 올라오는 것을 보니 이제 확인해보지 않을 수 없어서 해보기로 했다. [Jev 공식 소개](https://typesafe.ai/blog/introducing-system-one-models-and-jev)
