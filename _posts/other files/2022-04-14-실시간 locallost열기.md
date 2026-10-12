@@ -1,9 +1,9 @@
 ---
 layout: single
-post_type: technical
+post_type: concept
 title: "내가 다시 보려고 적는 실시간 localhost 다시 여는방법"
 categories: [info]
-tags: [기술정리, review]
+tags: [기술정리, 개념정리, review]
 ---
 
 

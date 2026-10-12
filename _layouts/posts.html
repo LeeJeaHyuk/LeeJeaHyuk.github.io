@@ -5,7 +5,9 @@ layout: archive
 {{ content }}
 
 {% assign visible_posts = site.posts | where_exp: "item", "item.hidden != true" | sort: 'date' | reverse %}
-{% if page.post_type %}
+{% if page.post_types %}
+  {% assign visible_posts = visible_posts | where_exp: 'post', 'page.post_types contains post.post_type' %}
+{% elsif page.post_type %}
   {% assign visible_posts = visible_posts | where: 'post_type', page.post_type %}
 {% endif %}
 {% assign postsByYear = visible_posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}

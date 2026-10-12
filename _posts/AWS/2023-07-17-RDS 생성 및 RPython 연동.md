@@ -1,9 +1,9 @@
 ---
 layout: single
-post_type: technical
+post_type: concept
 title: "RDS 생성 및 RPython 연동"
 categories: [aws]
-tags: [기술정리, aws]
+tags: [기술정리, 개념정리, aws]
 toc : true
 ---
 

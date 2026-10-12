@@ -1,4 +1,4 @@
-{% assign post_type = page.post_type | default: 'technical' %}
+{% assign post_type = page.post_type | default: 'concept' %}
 {% assign type_posts = site.posts | where: 'post_type', post_type | where_exp: 'post', 'post.hidden != true' | sort: 'date' %}
 {% assign previous_post = nil %}
 {% assign next_post = nil %}
