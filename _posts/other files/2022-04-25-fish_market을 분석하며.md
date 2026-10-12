@@ -1,3 +1,7 @@
+---
+post_type: thought
+tags: [생각]
+---
 # Fish Market data를 분석하며
 
 작년에 혼공머신을 공부할 때에는 dataframe과 numpy 등등 사용하는 sklearn의 대한 이해도 부족했었다

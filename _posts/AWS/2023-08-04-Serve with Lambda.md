@@ -1,8 +1,9 @@
 ---
 layout: single
+post_type: technical
 title: "[Analytics on AWS] - Serve with Lambda."
 categories: [aws]
-tag : [aws]
+tags: [기술정리, aws]
 toc : true
 ---
 

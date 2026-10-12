@@ -1,8 +1,9 @@
 ---
 layout: single
+post_type: technical
 title: "EC2 서버에서 Jupyter Notebook 구동하기"
 categories: [aws]
-tag : [aws]
+tags: [기술정리, aws]
 toc : true
 ---
 

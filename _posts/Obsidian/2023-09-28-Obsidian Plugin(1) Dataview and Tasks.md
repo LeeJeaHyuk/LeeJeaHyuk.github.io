@@ -1,12 +1,9 @@
 ---
 layout: single
+post_type: technical
 title: "Obsidian Plugin(1) Dataview and Tasks"
 categories: [Obsidian]
-tags:
-  - Post
-  - Obsidian
-  - Dataview
-  - Tasks
+tags: [기술정리, Post, Obsidian, Dataview, Tasks]
 toc : true
 ---
 

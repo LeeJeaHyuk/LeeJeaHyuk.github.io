@@ -1,8 +1,9 @@
 ---
 layout: single
+post_type: technical
 title: "Attention"
 categories: [kaggle_competition]
-tag : [kaggle_competition]
+tags: [기술정리, kaggle_competition]
 ---
 
 

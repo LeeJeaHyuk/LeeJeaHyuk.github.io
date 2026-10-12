@@ -1,3 +1,7 @@
+---
+post_type: technical
+tags: [기술정리]
+---
 # Transformer
 
 트랜스포머는 "attenetion is all you need " 논문에서 발표한 모델이다.

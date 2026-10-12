@@ -1,8 +1,9 @@
 ---
 layout: single
+post_type: technical
 title: "PyTorch Tutorial - 3.Bulid The Neural Network"
 categories: [pytorch]
-tag : [pytorch]
+tags: [기술정리, pytorch]
 toc : trues
 ---
 

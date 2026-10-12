@@ -1,8 +1,9 @@
 ---
 layout: single
+post_type: technical
 title: "PyTorch Tutorial - 5.Optimizer and Model Save"
 categories: [pytorch]
-tag : [pytorch]
+tags: [기술정리, pytorch]
 toc : trues
 ---
 모델과 데이터가 준비되면, 모델을 훈련하고 검증하며 데이터에 대한 파라미터를 최적화하여 모델을 테스트한다. 훈련은 반복적인 과정으로, 각 반복마다 모델은 출력을 예측하고 예측의 오차를 계산하며, 오차에 대한 파라미터의 미분 값을 수집하고 경사 하강법을 사용하여 파라미터를 최적화한다

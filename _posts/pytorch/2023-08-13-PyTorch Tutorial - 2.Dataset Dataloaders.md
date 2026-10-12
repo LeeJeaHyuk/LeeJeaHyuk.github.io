@@ -1,8 +1,9 @@
 ---
 layout: single
+post_type: technical
 title: "PyTorch Tutorial - 2.Dataset Dataloaders"
 categories: [pytorch]
-tag : [pytorch]
+tags: [기술정리, pytorch]
 toc : true
 ---
 데이터셋 코드와 모델 훈련 코드를 서로 독립적으로 작성하는 것은 코드의 가독성과 모듈성을 높이는 중요한 원칙이다. 이번 튜토리얼에서는 PyTorch에서 제공하는 두 가지 프리미티브 함수를 활용하여 데이터셋을 구성하고, 모델 훈련을 진행하는 방법을 실습하려고 한다
