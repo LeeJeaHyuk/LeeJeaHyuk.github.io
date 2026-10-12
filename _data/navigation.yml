@@ -1,6 +1,4 @@
 main:
-  - title: "생각 글"
-    url: /thoughts/
   - title: "개념 정리"
     url: /concepts/
   - title: "실험 기록"
@@ -11,5 +9,3 @@ main:
     url: /categories/
   - title: "태그"
     url: /tags/
-  - title: "소개"
-    url: /about/
