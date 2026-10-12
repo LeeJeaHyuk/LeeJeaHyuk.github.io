@@ -1,3 +1,6 @@
+---
+published: false
+---
 
 
 Pytorch와 Tensorflow GPU를 사용하기 위해 어떤 조건이 필요한지 살펴보았는데 window에서 사용하기에는 Tensorflow는 업데이트가 더 되지 않아 낮은 버전에서 사용해야 했고 Pytorch는 그보다 높은 버전에서 보통 사용하여서 cudatoolkit의 버전 관리를 위해서는 가상환경보다는 docker를 사용하는 것이 좋기 때문에 docker 설치를 따라해 보려고 한다

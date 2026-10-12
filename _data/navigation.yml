@@ -1,6 +1,8 @@
 main:
-  - title: "글"
-    url: /posts/
+  - title: "생각 글"
+    url: /thoughts/
+  - title: "기술 정리"
+    url: /technical/
   - title: "주제"
     url: /categories/
   - title: "태그"

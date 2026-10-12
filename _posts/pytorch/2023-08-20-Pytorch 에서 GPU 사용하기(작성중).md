@@ -1,5 +1,6 @@
 ---
 layout: single
+published: false
 title: "Pytorch 에서 GPU 사용하기"
 categories: [pytorch]
 tag : [pytorch]

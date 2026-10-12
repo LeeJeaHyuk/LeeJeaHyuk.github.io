@@ -1,12 +1,28 @@
-{% if page.previous or page.next %}
+{% assign post_type = page.post_type | default: 'technical' %}
+{% assign type_posts = site.posts | where: 'post_type', post_type | where_exp: 'post', 'post.hidden != true' | sort: 'date' %}
+{% assign previous_post = nil %}
+{% assign next_post = nil %}
+{% for post in type_posts %}
+  {% if post.url == page.url %}
+    {% unless forloop.first %}
+      {% assign previous_index = forloop.index0 | minus: 1 %}
+      {% assign previous_post = type_posts[previous_index] %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next_post = type_posts[forloop.index] %}
+    {% endunless %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if previous_post or next_post %}
   <nav class="pagination">
-    {% if page.previous %}
-      <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
+    {% if previous_post %}
+      <a href="{{ previous_post.url | relative_url }}" class="pagination--pager" title="{{ previous_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
     {% else %}
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
     {% endif %}
-    {% if page.next %}
-      <a href="{{ page.next.url | relative_url }}" class="pagination--pager" title="{{ page.next.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
+    {% if next_post %}
+      <a href="{{ next_post.url | relative_url }}" class="pagination--pager" title="{{ next_post.title | markdownify | strip_html }}">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
     {% else %}
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
     {% endif %}

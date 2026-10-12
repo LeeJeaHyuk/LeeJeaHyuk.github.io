@@ -4,28 +4,21 @@ layout: archive
 
 {{ content }}
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
-
 {% assign entries_layout = page.entries_layout | default: 'list' %}
-{% assign visible_posts = site.posts | where_exp: 'post', 'post.hidden != true' %}
+{% assign visible_posts = site.posts | where: 'post_type', 'thought' | where_exp: 'post', 'post.hidden != true' | sort: 'date' | reverse %}
 <div class="home-columns">
   <section class="home-posts" aria-labelledby="recent-posts-title">
     <div class="home-posts__heading">
-      <h2 id="recent-posts-title">최근 기록</h2>
-      <a href="{{ '/posts/' | relative_url }}">전체 글 {{ visible_posts.size }}편</a>
+      <h2 id="recent-posts-title">최근 생각 글</h2>
+      <a href="{{ '/thoughts/' | relative_url }}">생각 글 {{ visible_posts.size }}편</a>
     </div>
     <div class="entries-{{ entries_layout }}">
-      {% for post in posts %}
-        {% unless post.hidden %}
-          {% include archive-single.html type=entries_layout %}
-        {% endunless %}
+      {% for post in visible_posts %}
+        {% include archive-single.html type=entries_layout %}
+      {% else %}
+        <p>아직 공개된 생각 글이 없습니다.</p>
       {% endfor %}
     </div>
-    {% include paginator.html %}
   </section>
 
   <aside class="home-index" aria-label="기록 탐색">
@@ -44,11 +37,11 @@ layout: archive
       </ul>
     </section>
     <section aria-labelledby="years-title">
-      <h2 id="years-title">연도별 기록</h2>
+      <h2 id="years-title">연도별 생각 글</h2>
       <ul>
         {% assign years = visible_posts | group_by_exp: 'post', 'post.date | date: "%Y"' %}
         {% for year in years %}
-          <li><a href="{{ '/posts/' | relative_url }}#{{ year.name }}"><span>{{ year.name }}</span><span class="home-index__count">{{ year.items.size }}<span class="sr-only">편</span></span></a></li>
+          <li><a href="{{ '/thoughts/' | relative_url }}#{{ year.name }}"><span>{{ year.name }}</span><span class="home-index__count">{{ year.items.size }}<span class="sr-only">편</span></span></a></li>
         {% endfor %}
       </ul>
     </section>
