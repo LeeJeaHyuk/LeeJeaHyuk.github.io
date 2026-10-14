@@ -3,7 +3,7 @@ layout: single
 post_type: reference
 title: "Decision Model 자료 조사: 공개 모델과 적용 사례"
 date: 2026-10-12 00:00:00 +0900
-last_modified_at: 2026-10-12
+last_modified_at: 2026-10-13
 categories: [AI]
 tags: [자료조사, Jev, Kev, OpenJev, Mica, DecisionModel, AIAgent, Minecraft]
 permalink: /ai/decision-model-references/
@@ -14,7 +14,7 @@ toc_label: "이 글의 내용"
 
 결정 모델을 직접 연결해볼 수 있는 공개 구현과 적용 사례를 찾았다. 무엇이 공개돼 있고, 어떤 역할에 사용됐으며, 품질 개선이라는 표현이 어떤 비교에서 나왔는지 정리한다. 조사일은 **2026-10-12**이며, 같은 주제의 후속 검색도 이 문서에 이어서 남긴다.
 
-관심을 가진 계기는 [경제 프로젝트 생각 글](/ai/decision-model-economics/)과 [게임 생각 글](/ai/minecraft-agent-lab-qwen-kev-gameplay/)에서, API 설명은 [개념 정리](/ai/jev-system-one-decision-model/)에서 읽을 수 있다.
+관심을 가진 계기는 [결정 모델 생각 글](/ai/decision-model-introduction/)과 [게임 생각 글](/ai/minecraft-agent-lab-qwen-kev-gameplay/)에서, API 설명은 [개념 정리](/ai/jev-system-one-decision-model/)에서 읽을 수 있다.
 
 ## 검색한 질문과 검색어
 
@@ -59,8 +59,6 @@ toc_label: "이 글의 내용"
 ## 내 프로젝트의 기록과 연결
 
 Minecraft Agent Lab은 [7be99fa 버전](https://github.com/LeeJeaHyuk/minecraft-agent-lab/tree/7be99faac450f3031798a51185bd7d36ff79c958)의 Qwen3.8-27B·Kev-4B 조합을 다룬다. 실행 조건과 야간 채집·전투·귀가 결과, 크리퍼 피해와 운영자 개입은 [Minecraft 실험 기록](/ai/minecraft-agent-lab-experiment/)에 모았다.
-
-[경제 프로젝트 실험 기록](/ai/decision-model-economics-experiment/)은 별도 문서로 연결한다. 위 표의 금융 민원 분류 사례와는 구분한다.
 
 ## 후속 조사에서 확인할 것
 

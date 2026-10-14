@@ -16,9 +16,9 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "이재혁의 엔지니어링 기록"
+title                    : "회고 노트"
 title_separator          : "|"
-subtitle                 : "개발과 학습의 기록"
+subtitle                 :
 name                     : "이재혁"
 description              : "딥러닝, 데이터 분석, 클라우드와 개발 환경을 공부하고 직접 구현한 과정을 기록합니다."
 url                      : "https://leejeahyuk.github.io"
@@ -185,6 +185,7 @@ exclude:
   - Rakefile
   - README
   - AGENTS.md
+  - _private
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
@@ -290,7 +291,7 @@ defaults:
       layout: single
       post_type: concept
       author_profile: false
-      read_time: true
+      read_time: false
       comments: # true
       share: false
       related: false

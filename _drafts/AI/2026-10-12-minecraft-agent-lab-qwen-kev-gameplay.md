@@ -3,15 +3,15 @@ layout: single
 post_type: thought
 title: "Decision Model (2): 게임을 더 살아 있게 만들 수 있을까"
 date: 2026-10-12 00:01:00 +0900
-last_modified_at: 2026-10-12
+last_modified_at: 2026-10-13
 categories: [AI]
 tags: [생각, Minecraft, Mineflayer, Qwen, Kev, Jev, DecisionModel, AIAgent]
 permalink: /ai/minecraft-agent-lab-qwen-kev-gameplay/
-excerpt: "경제 프로젝트에서 게임으로 생각을 넓힌 뒤, Minecraft에 적용하며 행동 선택과 실제 실행 사이의 문제를 마주한 과정을 기록한다."
+excerpt: "결정 모델을 Minecraft에 적용하며 행동 선택과 실제 실행 사이의 문제를 마주한 과정을 기록한다."
 toc: false
 ---
 
-[이전 글](/ai/decision-model-economics/)에서 이어서, 그다음에는 곰곰이 생각해보니 게임을 더 살아 있는 것처럼 보이게 하는 방법으로 이 모델이 생각보다 큰 역할을 할 수 있을 것 같다는 생각이 들었다. 게임은 기업이 아니더라도 모델 훈련용 데이터를 얻기 쉬울 것 같고, 기존 상호작용도 이동이나 공격, 회피처럼 행동을 결정하는 부분이 많아서 결정 모델을 적용하기도 쉬워 보였기 때문이다. 하지만 직접 적용해보려고 했을 때 생각만큼 막 아무 곳에나 적용할 수는 없었다.
+[이전 글](/ai/decision-model-introduction/)에서 이어서, 그다음에는 곰곰이 생각해보니 게임을 더 살아 있는 것처럼 보이게 하는 방법으로 이 모델이 생각보다 큰 역할을 할 수 있을 것 같다는 생각이 들었다. 게임은 기업이 아니더라도 모델 훈련용 데이터를 얻기 쉬울 것 같고, 기존 상호작용도 이동이나 공격, 회피처럼 행동을 결정하는 부분이 많아서 결정 모델을 적용하기도 쉬워 보였기 때문이다. 하지만 직접 적용해보려고 했을 때 생각만큼 막 아무 곳에나 적용할 수는 없었다.
 
 기술 설명은 [개념 정리](/ai/jev-system-one-decision-model/), 실제 사용한 모델과 실행 결과는 [Minecraft Agent Lab 실험 기록](/ai/minecraft-agent-lab-experiment/)에서 볼 수 있다. 다른 모델과 사례를 찾아본 내용은 [자료 조사](/ai/decision-model-references/)에 정리했다.
 

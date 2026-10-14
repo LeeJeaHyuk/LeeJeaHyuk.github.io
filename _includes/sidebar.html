@@ -1,5 +1,17 @@
-{% if page.author_profile or layout.author_profile or page.sidebar %}
-  <div class="sidebar sticky">
+{% if page.author_profile or layout.author_profile or page.sidebar or site.sidebar.nav %}
+  <div class="sidebar sticky{% if site.sidebar.nav %} sidebar--shortcuts{% endif %}">
+    {% if site.sidebar.nav %}
+      <nav class="shortcut-nav" aria-label="바로가기">
+        <h2 class="shortcut-nav__title">바로가기</h2>
+        <ul>
+          <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>홈</a></li>
+          {% for shortcut in site.data.navigation[site.sidebar.nav] %}
+            <li><a href="{{ shortcut.url | relative_url }}"{% if page.url == shortcut.url %} aria-current="page"{% endif %}>{{ shortcut.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    {% endif %}
+
     {% if page.author_profile or layout.author_profile %}
       {% include author-profile.html %}
     {% endif %}
@@ -22,6 +34,7 @@
       {% include nav_list_main %}
     {% endif %}
 
+    {% if page.author_profile or layout.author_profile or page.sidebar %}
     <!-- 🔹 카테고리 목록 추가 -->
     <div class="sidebar-categories">
       <h3>Categories</h3>
@@ -35,5 +48,6 @@
         {% endfor %}
       </ul>
     </div>
+    {% endif %}
   </div>
 {% endif %}
