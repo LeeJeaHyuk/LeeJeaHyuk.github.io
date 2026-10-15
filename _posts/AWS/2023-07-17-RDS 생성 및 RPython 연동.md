@@ -26,7 +26,7 @@ RDS :  Amazon Relational Database Service
 
 
 ## 2. 데이터베이스 생성 방식/ 엔진 옵션 설정
-   - 더 많은 상세옵션을 선택하기 위해서는 표준 생성을 선택해주는 것이 좋다
+   - 더 많은 상세 옵션을 선택하기 위해서는 표준 생성을 선택해 주는 것이 좋다
    - 이 포스트에서는 PostgreSQL 데이터베이스를 사용
 
 ![image-20230717144932898](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717144932898.png)
@@ -44,7 +44,7 @@ RDS :  Amazon Relational Database Service
       - 프리 티어는 새로운 애플리케이션을 개발하거나 기존 애플리케이션을 테스트하거나 Amazon RDS에 대한 실습을 위해 무료로 사용할 수 있는 환경을 제공
       - 프리 티어는 일정한 제한 사항이 있으며, 실제 프로덕션 환경에서 사용하기에는 제한적일 수 있다
 
-연습해보는 것이기 때문에 프리 티어를 사용
+연습해 보는 것이기 때문에 프리 티어를 사용
 
 ## 4. 설정
    1. 사용자 이름과 마스터 암호를 지정
@@ -59,12 +59,12 @@ RDS :  Amazon Relational Database Service
 ![image-20230717145527147](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717145527147.png)
 
 ## 6. 퍼블릭 엑세스 설정
-   1. 퍼블릭 액세스 설정 부분이다. 이번에는 개인 데탑에 R/Python연결 하려고 하기 때문에 퍼블릭 액세스에 예를 해주었다. 사실 이는 어느정도 보안 문제로 충분히 위험할 수 있으며, 이를 아니요로 했을경우에는 EC2에만 연결이 되게 된다. **현업에서 사용하게 된다면 특히 전문가와 상의를 하고 설정하는걸 추천.**
+   1. 퍼블릭 액세스 설정 부분이다. 이번에는 개인 데탑에 R/Python 연결 하려고 하기 때문에 퍼블릭 액세스에 예를 해 주었다. 사실 이는 어느 정도 보안 문제로 충분히 위험할 수 있으며, 이를 아니요로 했을 경우에는 EC2에만 연결이 되게 된다. **현업에서 사용하게 된다면 특히 전문가와 상의를 하고 설정하는 걸 추천.**
 
 ![image-20230717150432909](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717150432909.png)
 
 ## 7. 데이터베이스 이름 지정
-   1. R/Python 연결시 필요한 정보이다.
+   1. R/Python 연결 시 필요한 정보이다.
       - mydb
 
 ![image-20230717150629361](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717150629361.png)
@@ -79,23 +79,23 @@ RDS :  Amazon Relational Database Service
 ![image-20230717150837312](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717150837312.png)
 
 ## 10. 데이터베이스 정보 확인 (연결 & 보안 Tab)
-    1. DB를 클릭하여 정보 확인
-       - R/Python에 연결할때 사용되기 때문에 엔드포인트와 포트 번호를 확인
-         - database-1.cntx1a14qkyh.us-east-2.rds.amazonaws.com
-         - 5432
+1. DB를 클릭하여 정보 확인
+   - R/Python에 연결할 때 사용되기 때문에 엔드포인트와 포트 번호를 확인
+     - database-1.cntx1a14qkyh.us-east-2.rds.amazonaws.com
+     - 5432
 
 ![image-20230717152043150](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717152043150.png)
 
 ## 11. 데이터베이스 정보 확인 (구성 Tab)
-    1. DB의 정보 확인 가능
+1. DB의 정보 확인 가능
 
 ![image-20230717152333147](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717152333147.png)
 
 ## 12. 사용 중지
-    1. 작업 필터 - 중지
+1. 작업 필터 - 중지
 
 ## 13. RDS - R/Python 연결
-    - pg2.connct()를 사용해 conn을 만들었으면 cursor를 통해 sql문을 주고 받는다. 이후 이 커서 객체인 cur의 execute()명령을 실행하여 SQL쿼리를 실행한다.
+- pg2.connct()를 사용해 conn을 만들었으면 cursor를 통해 sql 문을 주고받는다. 이후 이 커서 객체인 cur의 execute() 명령을 실행하여 SQL 쿼리를 실행한다.
 
 ![image-20230717161516395](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717161516395.png)
 
@@ -157,9 +157,9 @@ print(result)
 
 ![image-20230717173227251](../../images/[AWS] RDS 생성 및 RPython 연동/image-20230717173227251.png)
 
-- [iris 데이터](https://archive.ics.uci.edu/dataset/53/iris)를 다운받아서 열을 지정해주었다
-- iris 테이블을 만들어서 다운받은 iris 데이터를 넣어주었다
-- 해당 데이터를 업로드하고 fetchall() 를 사용하여 실행된 쿼리의 모든 결과를 한 번에 가져와서 확인해보았다.
+- [iris 데이터](https://archive.ics.uci.edu/dataset/53/iris)를 다운받아서 열을 지정해 주었다
+- iris 테이블을 만들어서 다운받은 iris 데이터를 넣어 주었다
+- 해당 데이터를 업로드하고 fetchall()를 사용하여 실행된 쿼리의 모든 결과를 한 번에 가져와서 확인해 보았다.
 
 
 

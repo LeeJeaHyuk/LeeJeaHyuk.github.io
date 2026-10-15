@@ -29,7 +29,7 @@ EC2 : Elastic Compute Cloud
 
 ![image-20230718143153696](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230718143153696.png)
 
-- 운영체제는 ubuntu를 설정하였고 이외의 값은 선택하지 않았다
+- 운영 체제는 ubuntu를 설정하였고 이외의 값은 선택하지 않았다
 
 
 
@@ -37,7 +37,7 @@ EC2 : Elastic Compute Cloud
 
 ![image-20230718143312656](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230718143312656.png)
 
-- 인스턴트 유형은 프리 티어에서 사용 가능한 것으로 선택해준다
+- 인스턴트 유형은 프리 티어에서 사용 가능한 것으로 선택해 준다
 
 
 
@@ -79,15 +79,15 @@ EC2 : Elastic Compute Cloud
 
 ![image-20230719102831584](../../images/EC2 서버에서 Jupyter Notebook 구동하기/image-20230719102831584.png)
 
-터미널을 열고 키페어를 저장한 폴더로 이동한 다음 
+터미널을 열고 키 페어를 저장한 폴더로 이동한 다음
 
-위 창에서 보이는SSH를 사용하여 EC2 인스턴스에 원격으로 연결하는 명령어를 사용한다
+위 창에서 보이는 SSH를 사용하여 EC2 인스턴스에 원격으로 연결하는 명령어를 사용한다
 
 
 
 ## 6. Jupyter Notebook 설정하기
 
-저는 이미 jupyter notebook이 다운로드 되어 있으므로 Anaconda prompt에서 아래 코드를 실행시켜Jupyter configuration 파일을 생성했다
+저는 이미 jupyter notebook이 다운로드되어 있으므로 Anaconda prompt에서 아래 코드를 실행시켜 Jupyter configuration 파일을 생성했다
 
 ```shell
 jupyter notebook --generate-config
@@ -127,7 +127,7 @@ conf.NotebookApp.password = u'YOUR PASSWORD HASH'
 conf.NotebookApp.port = 8888
 ```
 
-vim 편집기를 사용하여 해당 부분을 입력해주고 :wq로 저장해준다
+vim 편집기를 사용하여 해당 부분을 입력해 주고 :wq로 저장해 준다
 
 
 

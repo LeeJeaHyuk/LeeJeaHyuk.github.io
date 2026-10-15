@@ -9,7 +9,7 @@ toc : true
 
 ![Architecture Diagram](https://static.us-east-1.prod.workshops.aws/public/9b2d1982-fdcf-4207-ba26-71a458796115/static/images/visualize.png)
 
-- 학습목표
+- 학습 목표
   - Amazon Quicksight를 사용하여 S3에 수집, 저장된 데이터에 대해 몇 가지 시각화를 구축
   - Quicksight에서 사용할 수 있는 다양한 시각화 옵션을 탐색
 - Pre-requisites
@@ -24,7 +24,7 @@ toc : true
 ## QuickSight 셋팅
 
 - QuickSight를 사용하여 processsed data를 시각화
--  [Quicksight 콘솔](https://us-east-1.quicksight.aws.amazon.com/en/start) 로 이동
+-  [Quicksight 콘솔](https://us-east-1.quicksight.aws.amazon.com/en/start)로 이동
 
 ![image-20230802153206491](../../images/2023-08-03-Visualize in Quicksight/image-20230802153206491-1690957935036-1.png)
 
@@ -57,8 +57,8 @@ toc : true
 
 ![image-20230802154301902](../../images/2023-08-03-Visualize in Quicksight/image-20230802154301902.png)
 
-- 이름을 analyticsworkshop 으로 지정하고 
-- 연결 확인 (Validate connection) 을 클릭한 후 데이터 원본을 생성
+- 이름을 analyticsworkshop으로 지정하고
+- 연결 확인 (Validate connection)을 클릭한 후 데이터 원본을 생성
 
 ![image-20230802154407706](../../images/2023-08-03-Visualize in Quicksight/image-20230802154407706.png)
 
@@ -69,7 +69,7 @@ toc : true
 
 ![image-20230802154526867](../../images/2023-08-03-Visualize in Quicksight/image-20230802154526867.png)
 
-- 데이터 직접 쿼리(Directly quert your data) 를 선택
+- 데이터 직접 쿼리(Directly quert your data)를 선택
 
 ---
 
@@ -89,7 +89,7 @@ toc : true
 
 ![image-20230802155617672](../../images/2023-08-03-Visualize in Quicksight/image-20230802155617672.png)
 
-- 히트맵 위로 마우스를 가져가면 특정 사용자의 id와 횟수를 표시해준다
+- 히트맵 위로 마우스를 가져가면 특정 사용자의 id와 횟수를 표시해 준다
 
 
 

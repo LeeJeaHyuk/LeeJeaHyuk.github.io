@@ -9,7 +9,7 @@ toc : true
 
 최근 딥러닝 분야에서는 PyTorch가 더 많은 기업에서 요구되고 있는 추세라고 생각한다
 
-이에 따라 TensorFlow 이외에도 PyTorch를 배워보고자 [PyTorch 공식 튜토리얼](https://tutorials.pytorch.kr/beginner/basics/intro.html)을 따라해보고 이후 간단한 딥러닝 모델까지 학습해보는 과정을 공유하려고 한다
+이에 따라 TensorFlow 이외에도 PyTorch를 배워 보고자 [PyTorch 공식 튜토리얼](https://tutorials.pytorch.kr/beginner/basics/intro.html)을 따라 해 보고 이후 간단한 딥러닝 모델까지 학습해 보는 과정을 공유하려고 한다
 
 ---
 
@@ -34,7 +34,7 @@ toc : true
 - 텐서는 배열 및 행렬과 유사한 특수 데이터 구조
 - PyTorch에서는 텐서를 사용하여 모델의 매개변수뿐만 아니라 모델의 입력과 출력을 인코딩한다
 - 텐서는 GPU 또는 기타 하드웨어 가속기에서 실행할 수 있다는 점을 제외하면 NumPy의 ndarray와 유사하다(ndarray는 GPU에서 실행되지 않음)
-- Pytorch는 Bridge with NumPy 라는 NumPy와의 상호 운용성을 강화하는 기능이 존재하는데 이는 PyTorch와 NumPy 간에 데이터를 효율적으로 이동하고 공유할 수 있는 기능을 제공한다
+- Pytorch는 Bridge with NumPy라는 NumPy와의 상호 운용성을 강화하는 기능이 존재하는데 이는 PyTorch와 NumPy 간에 데이터를 효율적으로 이동하고 공유할 수 있는 기능을 제공한다
     - 텐서와 ndarray가 동일한 메모리 주소를 참조하여 같은 데이터를 공유할 수 있다
     - 데이터를 복사하지 않고 데이터를 공유함으로써, 메모리 사용을 최소화하고 데이터 변환과 연산의 오버헤드를 줄일 수 있다
     - 텐서를 NumPy 배열로 변환: torch.Tensor.numpy()
@@ -75,7 +75,7 @@ print(f"Random Tensor: \n {x_rand} \n")
 ![image-20230812163313158](../../images/2023-08-12 pyhotch tutorial/image-20230812163313158.png)
 
 - torch.ones_like는 1로 된 tensor를 생성
-- torch.rand_like 0과 1사이의 랜덤 값의 tensor를 생성
+- torch.rand_like 0과 1 사이의 랜덤 값의 tensor를 생성
 
 ---
 
@@ -160,18 +160,18 @@ torch.mul(tensor, tensor, out=z3) # tensor와 tensor의 요소별 곱셈을 구�
 
 {% endraw %}
 
-- tensor.T : transpose(전치행렬)
-- torch.rand.like(z3) z3텐서와같은 크기를 가지고 모든 요소를 0과 1사이의 랜덤 값으로 배치한다
+- tensor.T : transpose(전치 행렬)
+- torch.rand.like(z3) z3 텐서와 같은 크기를 가지고 모든 요소를 0과 1 사이의 랜덤 값으로 배치한다
 - 행렬곱
   - tensor @ tensor 행렬곱
   - torch.matmul(tensor, tensor.T, out=y3) tensor와 tensor.T의 행렬곱을 하고 y3에 저장
-- 요소간 곱셈
-  - tensor * tensor 요소간 곱
-  - torch.mul(y1) y1과 y1사이의 요소간 곱셈
+- 요소 간 곱셈
+  - tensor * tensor 요소 간 곱
+  - torch.mul(y1) y1과 y1 사이의 요소 간 곱셈
 
 ![image-20230812173823296](../../images/2023-08-12 pyhotch tutorial/image-20230812173823296.png)
 
-- torch.mul(tensor, tensor. out=z3)의 결과를 보면 알 수 있듯이 요소간 곱셈이기때문에 1과 1이 곱해져서 tensor값이 그대로 나온 것을 볼 수 있다.
+- torch.mul(tensor, tensor. out=z3)의 결과를 보면 알 수 있듯이 요소 간 곱셈이기 때문에 1과 1이 곱해져서 tensor 값이 그대로 나온 것을 볼 수 있다.
 
 {% raw %}
 
@@ -185,8 +185,8 @@ print(agg_item, type(agg_item))
 
 {% endraw %}
 
-- tensor.sum()은 tensor의 모든 요소를 1차원으로 만들어준다
-- agg.item은 텐서의 모든 요소를 더해서 float형태로 바꾸어주는데 텐서가 단일 스칼라 값을 가질 때에만 사용할 수 있으므로 .sum 이후에 사용해주어야 한다
+- tensor.sum()은 tensor의 모든 요소를 1차원으로 만들어 준다
+- agg.item은 텐서의 모든 요소를 더해서 float 형태로 바꾸어 주는데 텐서가 단일 스칼라 값을 가질 때에만 사용할 수 있으므로 .sum 이후에 사용해 주어야 한다
 
 ![image-20230812182103214](../../images/2023-08-12 pyhotch tutorial/image-20230812182103214.png)
 
@@ -224,12 +224,12 @@ print(f"n: {n}")
 
 {% endraw %}
 
-- 텐서와 Numpy배열은 CPU상에서 메모리를 공유할 수 있으며, 하나를 변경하면 다른 하나도 변경된다.
+- 텐서와 Numpy 배열은 CPU 상에서 메모리를 공유할 수 있으며, 하나를 변경하면 다른 하나도 변경된다.
 
 ![image-20230812182502084](../../images/2023-08-12 pyhotch tutorial/image-20230812182502084.png)
 
-- Numpy 배열을 PyTorch 텐서로 변환하고 t에 저장하고 Numpy배열에 1을 더한다
-- tensor를 확인할 시 tensor값도 반영된 것을 확인할 수 있다
+- Numpy 배열을 PyTorch 텐서로 변환하고 t에 저장하고 Numpy 배열에 1을 더한다
+- tensor를 확인할 시 tensor 값도 반영된 것을 확인할 수 있다
 
 
 

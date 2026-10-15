@@ -21,7 +21,7 @@ toc : true
 
     - ETL은 데이터를 추출하여 변환한 뒤 원하는 형식으로 로드하는 작업
     
-    - aws Crawlers 는 데이터 카탈로그를 자동으로 생성하고 데이터 스키마를 감지하기 위한 AWS Glue의 관리형 서비스
+    - aws Crawlers는 데이터 카탈로그를 자동으로 생성하고 데이터 스키마를 감지하기 위한 AWS Glue의 관리형 서비스
       - Crawlers는 다양한 데이터 소스를 검색하고 분석하여 해당 데이터에 대한 메타데이터를 데이터 카탈로그에 추가합니다. 이 메타데이터는 Glue Data Catalog에 저장되며, 이를 통해 데이터베이스, 테이블, 파티션, 스키마 등의 정보를 쉽게 찾을 수 있다
     
 
@@ -41,19 +41,19 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 
 ![image-20230801123217212](../../images/2023-07-26-Catalog Data/image-20230801123217212.png)
 
-- AmazonS3FullAccess 를 필터 한 후 선택
+- AmazonS3FullAccess를 필터한 후 선택
 
 ![image-20230801123413179](../../images/2023-07-26-Catalog Data/image-20230801123413179.png)
 
-- AWSGlueServiceRole 를 필터 후 선택
+- AWSGlueServiceRole를 필터 후 선택
 
 ![image-20230801123510841](../../images/2023-07-26-Catalog Data/image-20230801123510841.png)
 
-- 다음을 누르면 이름을 지정해 주어야 하는데 AnalyticsworkshopGlueRole 로 지정하였음
+- 다음을 누르면 이름을 지정해 주어야 하는데 AnalyticsworkshopGlueRole로 지정하였음
 
 ![image-20230801123610769](../../images/2023-07-26-Catalog Data/image-20230801123610769.png)
 
-- 이전에 추가한 AWSGlueServiceRole 와 AnalyticsworkshopGlueRole 이 존재하는지 확인하고 역할 생성을 클릭
+- 이전에 추가한 AWSGlueServiceRole와 AnalyticsworkshopGlueRole이 존재하는지 확인하고 역할 생성을 클릭
 
 ---
 
@@ -61,7 +61,7 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 
 ## AWS Glue Crawlers 생성
 
-- [Glue 콘솔](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/getting-started) 로 이동
+- [Glue 콘솔](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/getting-started)로 이동
 
 ![image-20230801124439395](../../images/2023-07-26-Catalog Data/image-20230801124439395.png)
 
@@ -77,11 +77,11 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 
 ![image-20230801130820756](../../images/2023-07-26-Catalog Data/image-20230801130820756.png)
 
-- s3 경로만 s3://yourname-analytics-workshop-bucket/data/ 로 지정해준 뒤 데이터 소스를 추가 후 다음
+- s3 경로만 s3://yourname-analytics-workshop-bucket/data/ 로 지정해 준 뒤 데이터 소스를 추가 후 다음
 
 ![image-20230801131101679](../../images/2023-07-26-Catalog Data/image-20230801131101679.png)
 
-- IAM role은 AnalyticsworkshopGlueRole 로 설정 후 다음
+- IAM role은 AnalyticsworkshopGlueRole로 설정 후 다음
 
 ![image-20230801131723223](../../images/2023-07-26-Catalog Data/image-20230801131723223.png)
 
@@ -89,11 +89,11 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 
 ![image-20230801142931486](../../images/2023-07-26-Catalog Data/image-20230801142931486.png)
 
-- Output configuration의 Target database를 새로고침 후 방금 생성한analyticsworkshopdb로 지정
+- Output configuration의 Target database를 새로고침 후 방금 생성한 analyticsworkshopdb로 지정
 
 ![image-20230801143118067](../../images/2023-07-26-Catalog Data/image-20230801143118067.png)
 
-- **Crawler schedule** 은 default값인 on demend 로 지정
+- **Crawler schedule**은 default 값인 on demend로 지정
 
 - 생성이 완료되면 run Crawler 클릭
 
@@ -104,7 +104,7 @@ IAM 콘솔 https://us-east-1.console.aws.amazon.com/iamv2/home#/roles로 이동�
 ## 카탈로그에서 새로 생성 된 테이블 확인
 
 - [Glue 카탈로그](https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#/v2/data-catalog/databases)로 이동
-  - Crawler 를 실행한 창과 데이터베이스 표시 창의 region이 다른 경우가 있는데 동일하게 맞춰주어야 데이터베이스에 표시된다
+  - Crawler를 실행한 창과 데이터베이스 표시 창의 region이 다른 경우가 있는데 동일하게 맞춰 주어야 데이터베이스에 표시된다
 
 ![image-20230801135358952](../../images/2023-07-26-Catalog Data/image-20230801135358952.png)
 

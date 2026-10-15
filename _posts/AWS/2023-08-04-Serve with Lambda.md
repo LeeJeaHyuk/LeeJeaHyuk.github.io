@@ -9,9 +9,9 @@ toc : true
 
 ![Architecture Diagram](https://static.us-east-1.prod.workshops.aws/public/9b2d1982-fdcf-4207-ba26-71a458796115/static/images/lambda.png?classes=shadow)
 
-- 학습목표
+- 학습 목표
   - Lambda 함수를 생성
-  - Athena가 S3의 processsed data에서 Hits 별 Top 5 Popular Songs를 쿼리하고 가져 오는 코드를 호스팅
+  - Athena가 S3의 processsed data에서 Hits별 Top 5 Popular Songs를 쿼리하고 가져오는 코드를 호스팅
 - Pre-requisites
   - [Ingest and Store ](https://catalog.workshops.aws/introduction-to-analytics-on-aws/ko-KR/lab-guide/ingest)
   - [Catalog ](https://catalog.workshops.aws/introduction-to-analytics-on-aws/ko-KR/lab-guide/catalog)
@@ -23,7 +23,7 @@ toc : true
 
 ## Lambda 함수 생성
 
-- [Lambda 콘솔](https://console.aws.amazon.com/lambda/home?region=us-east-1) 로 이동
+- [Lambda 콘솔](https://console.aws.amazon.com/lambda/home?region=us-east-1)로 이동
 - **Create function** 클릭
 
 
@@ -32,7 +32,7 @@ toc : true
 
 - 함수 이름으로 Analyticsworkshop_top5Songs 지정
 - 런타임으로 **Python 3.8** 선택
-- 기본 실행 역할 변경(**Chane default execution role**)을 확장하여 기본 Lambda 권한을 가진 새 역할 생성( **Create a new role with basic Lambda permissions**)이 체크되어있는지 확인
+- 기본 실행 역할 변경(**Chane default execution role**)을 확장하여 기본 Lambda 권한을 가진 새 역할 생성( **Create a new role with basic Lambda permissions**)이 체크되어 있는지 확인
 
 ---
 
@@ -106,15 +106,15 @@ def lambda_handler(event, context):
 
 ![image-20230804135530418](../../images/2023-08-04-Serve with Lambda/image-20230804135530418.png)
 
-- 소스 코드란의 **lambda_function.py** 를 위의 코드로 교체합니다
+- 소스 코드란의 **lambda_function.py**를 위의 코드로 교체합니다
 
 
 
-- 환경 변수를 사용하여 소스코드의 역할을 수행할 수 있습니다
+- 환경 변수를 사용하여 소스 코드의 역할을 수행할 수 있습니다
 
 ![image-20230804135659980](../../images/2023-08-04-Serve with Lambda/image-20230804135659980.png)
 
-- 구성 - 환경변수 - 편집
+- 구성 - 환경 변수 - 편집
 
 ![image-20230804135816304](../../images/2023-08-04-Serve with Lambda/image-20230804135816304.png)
 
@@ -124,12 +124,12 @@ def lambda_handler(event, context):
 
 ![image-20230804135921700](../../images/2023-08-04-Serve with Lambda/image-20230804135921700.png)
 
-- 일반구성 - 편집
+- 일반 구성 - 편집
 
 ![image-20230804140002427](../../images/2023-08-04-Serve with Lambda/image-20230804140002427.png)
 
 - 메모리 128mb
-- 제한시간(timeout) 을 10초로 변경 후 저장
+- 제한 시간(timeout)을 10초로 변경 후 저장
 
 ---
 
@@ -139,7 +139,7 @@ def lambda_handler(event, context):
 
 ![image-20230804140206029](../../images/2023-08-04-Serve with Lambda/image-20230804140206029.png)
 
-- 구성(**Configuration**) - 권한(**Permissions**) - 역할 이름(**Execution Role**) 아래의 역할을 클릭하여 IAM 콘솔창 열기
+- 구성(**Configuration**) - 권한(**Permissions**) - 역할 이름(**Execution Role**) 아래의 역할을 클릭하여 IAM 콘솔 창 열기
 
 ![image-20230804140329148](../../images/2023-08-04-Serve with Lambda/image-20230804140329148.png)
 
@@ -163,7 +163,7 @@ def lambda_handler(event, context):
 ![image-20230804171255721](../../images/2023-08-04-Serve with Lambda/image-20230804171255721.png)
 
 -  새로 생성된 람다 함수의 실행 결과를 확인하기 위해 Dummy 테스트 이벤트를 구성
-- 이벤트 이름만 test로 지정 해준 뒤 저장 후 테스트 버튼 클릭
+- 이벤트 이름만 test로 지정해 준 뒤 저장 후 테스트 버튼 클릭
 
 ![image-20230804171519932](../../images/2023-08-04-Serve with Lambda/image-20230804171519932.png)
 

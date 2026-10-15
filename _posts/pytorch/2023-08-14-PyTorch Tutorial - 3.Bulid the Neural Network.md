@@ -60,12 +60,12 @@ print(model)
 
 ![image-20230813154750967](../../images/2023-08-14-PyTorch Tutorial - 3.Bulid And Neural Network/image-20230813154750967.png)
 
-- nn.Modlue을 상속받는 클래스 NeuralNetwork 를 선언한다
+- nn.Modlue을 상속받는 클래스 NeuralNetwork를 선언한다
 - __init__ 메서드에서 모델을 구성한다
-  - super().__init__() 로 nn.Modlue를 상속받은 후 초기화한다
-  - nn.Flatten을 사용하여 데이터를 1차원으로 만들어준 뒤 nn.Sequential을 사용하여 신경망 레이어를 구성한다 
+  - super().__init__()로 nn.Modlue를 상속받은 후 초기화한다
+  - nn.Flatten을 사용하여 데이터를 1차원으로 만들어 준 뒤 nn.Sequential을 사용하여 신경망 레이어를 구성한다
 - forward 메서드에서는 모델의 순전파를 정의한다 
-  - nn.Sequental로 생성한 self.linear_relu_stack 을 사용한다
+  - nn.Sequental로 생성한 self.linear_relu_stack을 사용한다
 
 
 
@@ -85,7 +85,7 @@ print(f"Predicted class: {y_pred}")
 
 - 28*28의 무작위 값으로 이루어진 텐서 생성
 - 위에서 생성한 model을 사용하여 입력 결과를 얻는다
-- softmax함수를 사용하여 클래스별 확률 계산
+- softmax 함수를 사용하여 클래스별 확률 계산
   - pred_probab은 클래스별 예측 확률 값을 가지는 텐서
 - pred_probab.argmax(1) 텐서마다 가장 큰 값의 인덱스를 찾아서 해당 클래스를 예측 값으로 선택
 - 예측된 클래스는 tensor[2]
@@ -165,7 +165,7 @@ print(f"After ReLU: {hidden1}")
 
 ![image-20230814191946107](../../images/2023-08-14-PyTorch Tutorial - 3.Bulid And Neural Network/image-20230814191946107.png)
 
-- ReLU를 적용하기 전에는 음수와 양수 모두 포함되어있지만
+- ReLU를 적용하기 전에는 음수와 양수 모두 포함되어 있지만
 - ReLU를 적용 이후에는 음수 값들이 0으로 변환되어 음수 값은 모두 제거되고, 양수 값들은 그대로 유지한다
 
 - ReLU
@@ -214,8 +214,8 @@ print(pred_probab.argmax(1))
 
 ![image-20230814192456596](../../images/2023-08-14-PyTorch Tutorial - 3.Bulid And Neural Network/image-20230814192456596.png)
 
-- logits값들은 -무한대와 무한대 사이의 값으로 소프트맥스 함수를 사용하여 [0,1]범위의 에측 확률을 나타내는 값들로 표시할 수 있다
-- logits값은 2차원 형태의 텐서이기 때문에 softmax를 적용할 때 dim=1로 지정해준다
+- logits 값들은 -무한대와 무한대 사이의 값으로 소프트맥스 함수를 사용하여 [0,1] 범위의 에측 확률을 나타내는 값들로 표시할 수 있다
+- logits 값은 2차원 형태의 텐서이기 때문에 softmax를 적용할 때 dim=1로 지정해 준다
 - .argmax(1)을 사용하여 어느 클래스가 가장 높은 확률을 나타내는지 확인할 수 있다
 
 ---
@@ -275,8 +275,8 @@ summary(model, input_size=(3, 28, 28))
 
 ![image-20230814203036215](../../images/2023-08-14-PyTorch Tutorial - 3.Bulid And Neural Network/image-20230814203036215.png)
 
-- 위의 3 * 28 * 28 의 예제를 사용한 신경망을 Sequential로 묶은 뒤 summary를 확인해보았다
-- 3 * 28 * 28 = 2352를 선형 변환으로 20으로 바꾸어 주고 활성화 함수를 지난 뒤 softmax를 통과하기 전 10개로 줄여준 모습을 잘 보여준다
+- 위의 3 * 28 * 28의 예제를 사용한 신경망을 Sequential로 묶은 뒤 summary를 확인해 보았다
+- 3 * 28 * 28 = 2352를 선형 변환으로 20으로 바꾸어 주고 활성화 함수를 지난 뒤 softmax를 통과하기 전 10개로 줄여 준 모습을 잘 보여준다
 
 ---
 

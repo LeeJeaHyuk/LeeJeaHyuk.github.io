@@ -9,7 +9,7 @@ tags: [기술정리, 개념정리, review]
 
 ## 내가 다시 보려고 적는 실시간 localhost 다시 여는방법
 
-1. 깃헙 블로그 폴더 leejeahyuk.github.io에서 powershell열기
+1. 깃헙 블로그 폴더 leejeahyuk.github.io에서 powershell 열기
 
 2. `bundle exec jekyll serve`
 
@@ -21,7 +21,7 @@ tags: [기술정리, 개념정리, review]
 
 6. http://localhost:4000/ 로 실시간 확인
 
-7. 작업하고 업데이트 확인하려면 powershell창에서 ctrl + c 후에 다시  `bundle exec jekyll serve`
+7. 작업하고 업데이트 확인하려면 powershell 창에서 ctrl + c 후에 다시 `bundle exec jekyll serve`
 
 8. 반복
 

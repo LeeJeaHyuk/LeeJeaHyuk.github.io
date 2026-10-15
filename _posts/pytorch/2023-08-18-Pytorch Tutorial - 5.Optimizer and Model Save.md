@@ -91,12 +91,12 @@ epochs = 5
 ## Optimization Loop
 
 하이퍼파라미터를 설정한 후, 최적화 루프를 사용하여 모델을 훈련하고 최적화할 수 있다 
-- The Train Loop : 훈련 데이터셋을 반복하면서 최적의 파라미터로 수렴하는것이 목표이다
+- The Train Loop : 훈련 데이터셋을 반복하면서 최적의 파라미터로 수렴하는 것이 목표이다
   - 이 과정에서 모델은 예측을 생성하고 손실을 계산한 후, 역전파를 통해 그래디언트를 계산하고 매개변수를 조정한다
 
 - The Validation/Test Loop : 테스트 데이터셋을 반복하여 모델의 성능이 개선되고 있는지 확인(성능 평가)
   - 테스트 데이터를 사용하여 모델의 정확도, 손실 등을 측정하고 모델의 성능 개선 여부를 확인한다
-  - 모델이 과적합되어있는지 확인하거나 모델의 일반화 능력을 평가한다
+  - 모델이 과적합되어 있는지 확인하거나 모델의 일반화 능력을 평가한다
 
 
 
@@ -134,7 +134,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
 {% endraw %}
 
-- 위 예시에서는 확률적 경사 하강법인 SGD(Stochastic Gradient Descent)옵티마이저를 사용하고 추가로 PyTorch에는 ADAM과 RMSProp과 같은 다양한 옵티마이저가존재한다 
+- 위 예시에서는 확률적 경사 하강법인 SGD(Stochastic Gradient Descent) 옵티마이저를 사용하고 추가로 PyTorch에는 ADAM과 RMSProp과 같은 다양한 옵티마이저가 존재한다
 - 옵티마이저를 초기화하는 과정에서 모델의 학습이 필요한 파라미터를 등록하고 학습률 하이퍼파라미터를 전달한다
 
 
@@ -205,16 +205,16 @@ def test_loop(dataloader, model, loss_fn):
 {% endraw %}
 
 - train_loop
-    - 이 함수는 주어진 데이터로더(dataloader), 모델(model), 손실 함수(loss_fn), 최적화기(optimizer)를 사용하여 모델을 훈련하는 역할을 한다
+    - 이 함수는 주어진 데이터 로더(dataloader), 모델(model), 손실 함수(loss_fn), 최적화기(optimizer)를 사용하여 모델을 훈련하는 역할을 한다
     - 데이터셋의 크기를 가져온 후, 모델을 훈련 모드로 설정
-    - 데이터로더에서 미니배치(batch)와 해당 미니배치의 입력(X)과 타겟(y)을 반복하여 가져온다
+    - 데이터 로더에서 미니배치(batch)와 해당 미니배치의 입력(X)과 타겟(y)을 반복하여 가져온다
     - 모델을 사용해 입력 데이터를 예측(pred)하고, 예측과 실제 타겟 간의 손실(loss)을 계산한다
     - 손실에 대한 역전파를 수행하여 그래디언트를 계산하고, optimizer.step()으로 매개변수를 업데이트하고 optimizer.zero_grad()로 그래디언트를 초기화한다
     - 매 100번째 미니배치마다 현재 손실과 진행 상황을 출력
 
 - test_loop
-    - 이 함수는 주어진 데이터로더(dataloader), 모델(model), 손실 함수(loss_fn)를 사용하여 모델의 성능을 평가하는 역할을 합니다.
-    - model.eval() 로 모델을 평가 모드로 설정
+    - 이 함수는 주어진 데이터 로더(dataloader), 모델(model), 손실 함수(loss_fn)를 사용하여 모델의 성능을 평가하는 역할을 합니다.
+    - model.eval()로 모델을 평가 모드로 설정
     - 데이터셋의 크기와 미니배치의 수를 가져온 후, test_loss와 correct 변수를 초기화
     - test_loss += loss_fn(pred, y).item() : 모델이 각 미니배치에서 만든 예측과 해당하는 정답을 비교하여 손실을 계산하고, 이 손실을 `test_loss`에 누적하여 전체 평가 데이터셋에 대한 총 손실을 구한다.
     - correct += (pred.argmax(1) == y).type(torch.float).sum().item() : 모델의 예측값과 실제 정답을 비교하여 맞은 샘플의 수를 계산하고, 이 값을 `correct`에 누적하여 전체 평가 데이터셋에 대한 총 정확한 예측 수를 구한다
@@ -325,7 +325,7 @@ output = loaded_model(input_data)
 
 {% endraw %}
 
-- 모델 클래스와 가중치를 저장하고 불러오면, 모델의 구조를 별도로 정의하지 않고도 모델을 사용할 수 있다 .
+- 모델 클래스와 가중치를 저장하고 불러오면, 모델의 구조를 별도로 정의하지 않고도 모델을 사용할 수 있다.
 
 ---
 

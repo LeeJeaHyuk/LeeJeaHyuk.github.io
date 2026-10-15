@@ -23,7 +23,7 @@ toc : true
 
 ![image-20230725130637520](../../images/2023-07-25-test/image-20230725130637520.png)
 
-이름만 지정해주고 버킷을 만들어 준다 yourname-analytics-workshop-buket
+이름만 지정해 주고 버킷을 만들어 준다 yourname-analytics-workshop-buket
 
 ### 폴더 생성
 
@@ -41,7 +41,7 @@ toc : true
 
 ![image-20230725134845944](../../images/2023-07-25-test/image-20230725134845944.png)
 
-- tracks_list.json 파일을 추가해준다
+- tracks_list.json 파일을 추가해 준다
 
 ---
 
@@ -49,7 +49,7 @@ toc : true
 
 ## 2 Kinesis Firehose 생성
 
-- aws Kinesis Firehose 에서 스트림 생성을 해준 뒤 아래처럼 설정을 해준다
+- aws Kinesis Firehose에서 스트림 생성을 해 준 뒤 아래처럼 설정을 해 준다
 
 ![image-20230725135218776](../../images/2023-07-25-test/image-20230725135218776.png)
 
@@ -57,7 +57,7 @@ toc : true
 
 ![image-20230725135443236](../../images/2023-07-25-test/image-20230725135443236.png)
 
-- 이외의 값들은 default로 지정해준다
+- 이외의 값들은 default로 지정해 준다
 
 ---
 
@@ -77,15 +77,15 @@ toc : true
 
 ![image-20230725141512217](../../images/2023-07-25-test/image-20230725141512217.png)
 
-- 전송이 완료되면 출력 탭의 링크로 접속해준다
+- 전송이 완료되면 출력 탭의 링크로 접속해 준다
 
 ![image-20230725141751641](../../images/2023-07-25-test/image-20230725141751641.png)
 
-- 이전에 지정한 username과 pw를 입력해준다
+- 이전에 지정한 username과 pw를 입력해 준다
 
 ![image-20230725142915863](../../images/2023-07-25-test/image-20230725142915863.png)
 
-templete은 [aws workshop Lab guide-ingest and store](https://catalog.workshops.aws/introduction-to-analytics-on-aws/en-US/lab-guide/ingest) 의 Generate Dummy Data - On Amazon Kinesis Data Generator homepage 의 json template부분을 복사해서 넣어준다
+templete은 [aws workshop Lab guide-ingest and store](https://catalog.workshops.aws/introduction-to-analytics-on-aws/en-US/lab-guide/ingest) 의 Generate Dummy Data - On Amazon Kinesis Data Generator homepage 의 json template 부분을 복사해서 넣어 준다
 
 {% raw %}
 ```
@@ -107,13 +107,13 @@ templete은 [aws workshop Lab guide-ingest and store](https://catalog.workshops.
 ```
 {% endraw %}
 
-- send data를 누른 뒤 10000개가 전송되면 stop해준다
+- send data를 누른 뒤 10000개가 전송되면 stop해 준다
 
 
 
 ![image-20230725143337374](../../images/2023-07-25-test/image-20230725143337374.png)
 
-- s3의 buketㅇ firehose가 yyyy/mm/dd/hh 파티셔닝을 사용하여 데이터를 S3로 덤프 했다는 것을 알 수 있다 
+- s3의 buketㅇ firehose가 yyyy/mm/dd/hh 파티셔닝을 사용하여 데이터를 S3로 덤프했다는 것을 알 수 있다
 
 ---
 
