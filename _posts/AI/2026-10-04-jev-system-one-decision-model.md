@@ -3,7 +3,7 @@ layout: single
 post_type: concept
 title: "Decision Model 개념 정리: Jev의 API와 Kev의 공개 구현"
 date: 2026-10-04 00:00:00 +0900
-last_modified_at: 2026-10-13
+last_modified_at: 2026-10-15
 categories: [AI]
 tags: [기술정리, 개념정리, Jev, Kev, DecisionModel, AIAgent, Minecraft]
 permalink: /ai/jev-system-one-decision-model/
@@ -14,7 +14,7 @@ toc_label: "이 글의 내용"
 
 에이전트의 다음 행동을 프로그램에 연결하려면 출력 형식과 선택의 의미를 함께 정해야 한다. Jev는 상황을 읽고 미리 정의한 질문에 결정과 확률을 반환하는 TypeSafe의 모델이다. LLM·에이전트의 기초를 아는 개발자를 위해 질문 유형, 확률을 읽는 법, 공개 구현인 Kev와의 차이를 정리한다.
 
-도입을 고민한 순서는 [결정 모델에 관심을 가진 생각 글](/ai/decision-model-introduction/)과 [게임으로 확장한 생각 글](/ai/minecraft-agent-lab-qwen-kev-gameplay/)에 담았다. 실제 실행은 [Minecraft 실험 기록](/ai/minecraft-agent-lab-experiment/), 모델과 외부 사례의 출처는 [자료 조사](/ai/decision-model-references/)에서 이어진다.
+도입을 고민한 순서와 게임으로 확장한 과정은 [Decision Model - Jev을 발견, 조사, 테스트 (1)](/ai/decision-model-introduction/)에 담았다. 실제 실행은 [Minecraft 실험 기록](/ai/minecraft-agent-lab-experiment/), 모델과 외부 사례의 출처는 [자료 조사](/ai/decision-model-references/)에서 이어진다.
 
 ## 왜 다음 행동을 선택지로 받을까?
 

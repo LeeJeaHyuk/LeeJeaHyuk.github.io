@@ -3,7 +3,7 @@ layout: single
 post_type: experiment
 title: "Minecraft Agent Lab 실험 기록: Qwen·Kev의 작업 중단과 재개"
 date: 2026-10-12 00:00:00 +0900
-last_modified_at: 2026-10-12
+last_modified_at: 2026-10-15
 categories: [AI]
 tags: [기술정리, 실험기록, Minecraft, Mineflayer, Qwen, Kev, DecisionModel, AIAgent]
 permalink: /ai/minecraft-agent-lab-experiment/
@@ -14,7 +14,11 @@ toc_label: "이 글의 내용"
 
 Minecraft Agent Lab은 Qwen3.8-27B의 계획, Kev-4B의 행동 선택, Mineflayer의 실행, 로컬 피해 반응 코드로 구성했다. 개발 실행에서 야간 채집·제작·귀가와 전투 후 작업 재개를 관찰했다. 실행 환경, 모델·코드 버전, 처리 순서, 관찰 결과와 제약조건을 기록한다.
 
-기준 코드는 [7be99fa 버전](https://github.com/LeeJeaHyuk/minecraft-agent-lab/tree/7be99faac450f3031798a51185bd7d36ff79c958)이다. 도입 배경은 [게임 생각 글](/ai/minecraft-agent-lab-qwen-kev-gameplay/), 질문 유형과 확률 정의는 [Jev·Kev 개념 정리](/ai/jev-system-one-decision-model/)에서 다룬다.
+기준 코드는 [7be99fa 버전](https://github.com/LeeJeaHyuk/minecraft-agent-lab/tree/7be99faac450f3031798a51185bd7d36ff79c958)이다. 도입 배경은 [생각 글](/ai/decision-model-introduction/), 질문 유형과 확률 정의는 [Jev·Kev 개념 정리](/ai/jev-system-one-decision-model/)에서 다룬다.
+
+## 동작 영상
+
+<!-- 사용자가 공개할 녹화 영상의 URL 또는 /assets/ 경로를 추가한다. 비공개 녹화 파일의 경로를 링크하지 않는다. -->
 
 ## 사용한 모델과 역할
 
@@ -167,4 +171,4 @@ Minecraft Java 1.21.1 클라이언트로 `localhost:25565`에 접속하면 `LabB
 
 위 명령의 목표는 원목 채집과 판자 제작이다. 집·상자·장비·야간 대응은 별도 실행기로 처리하며, 일부 과제는 앞선 준비 상태에 의존한다.
 
-관련 생각 글: [Decision Model (2): 게임을 더 살아 있게 만들 수 있을까](/ai/minecraft-agent-lab-qwen-kev-gameplay/).
+관련 생각 글: [Decision Model - Jev을 발견, 조사, 테스트 (1)](/ai/decision-model-introduction/).
