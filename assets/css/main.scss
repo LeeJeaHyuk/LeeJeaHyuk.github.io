@@ -423,7 +423,7 @@ input:focus-visible {
   overflow-y: hidden;
 }
 
-.page__content :not(.MJXc-display) > .MathJax_CHTML,
+.page__content :not(.MJXc-display) > .MathJax_CHTML[tabindex],
 .page__content .MathJax_Preview {
   display: inline-block;
   max-width: 100%;
