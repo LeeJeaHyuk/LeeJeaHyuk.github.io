@@ -414,6 +414,25 @@ input:focus-visible {
   border-radius: 4px;
 }
 
+.page__content .MJXc-display,
+.page__content .MathJax_Display,
+.page__content .MJXp-display {
+  max-width: 100%;
+  padding-block: 0.6em;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.page__content :not(.MJXc-display) > .MathJax_CHTML,
+.page__content .MathJax_Preview {
+  display: inline-block;
+  max-width: 100%;
+  padding-block: 0.2em;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: middle;
+}
+
 .page__content blockquote {
   margin-left: 0;
   padding: 4px 0 4px 20px;
