@@ -3,7 +3,7 @@ layout: single
 post_type: reference
 title: "로컬 모델 및 결정 모델 적용 사례"
 date: 2026-10-12 00:00:00 +0900
-last_modified_at: 2026-10-15
+last_modified_at: 2026-10-16
 categories: [AI]
 tags: [자료조사, LocalLLM, Jev, Kev, OpenJev, Mica, DecisionModel, AIAgent, Minecraft, Skyrim, Fallout4, NPC]
 permalink: /ai/decision-model-references/
@@ -26,17 +26,21 @@ toc_label: "이 글의 내용"
 
 ## 수집한 적용 사례
 
+- NPC 대화 모드: <a href="#case-mantella" data-scroll-ignore>Mantella</a> · <a href="#case-chim" data-scroll-ignore>CHIM</a>
+- 업무·브라우저: <a href="#case-kev-customer-support" data-scroll-ignore>Kev 고객 문의 학습</a> · <a href="#case-kev-cfpb" data-scroll-ignore>Kev 금융 민원 분류</a> · <a href="#case-openjev-browser" data-scroll-ignore>OpenJev 브라우저 평가</a>
+- 게임: <a href="#case-astra-minecraft" data-scroll-ignore>Minecraft</a> · <a href="#case-mica-tetris" data-scroll-ignore>Mica Tetris</a> · <a href="#case-typesafe-demos" data-scroll-ignore>Doom·Wikiracing</a> · <a href="#case-jevman" data-scroll-ignore>Pac-Man</a>
+
 | 수집일 | 사례 | 맡긴 역할과 보고된 내용 | 조건·원문 |
 | --- | --- | --- | --- |
-| 2026-10-15 | Mantella | Skyrim·Fallout 4의 NPC 대화에 음성 인식, LLM, 음성 합성을 연결한다. | 공식 안내는 로컬 모델과 외부 API를 모두 지원한다. [공식 소개](https://art-from-the-machine.github.io/Mantella/), [코드](https://github.com/art-from-the-machine/Mantella/tree/c0c1ae6db01f3c2a14dbab8ec5c3e6419e4f6bac) |
-| 2026-10-15 | CHIM | Skyrim의 NPC 대화·세계 상태·게임 내 행동을 연결한다. | 공식 가이드는 DwemerDistro 내부의 LLM Studio 또는 별도 LM Studio·KoboldCPP 연결을 안내한다. [로컬 모델 가이드](https://github.com/Dwemer-Dynamics/DwemerDynamics/blob/89aa67ae371e2e33d27cd576921dc1d5fdfd3820/chim/local-llm-guide.html), [기능 소개](https://github.com/Dwemer-Dynamics/DwemerDynamics/blob/89aa67ae371e2e33d27cd576921dc1d5fdfd3820/chim/index.html) |
-| 2026-10-15 | [Astra・Jev Minecraft agent](https://github.com/rmalde/minecraft-agent/tree/78b40ed59514e5e2abde33a05ce398ecb2c39e05) | Astra가 목표를 계획하고 Jev가 행동을 선택한다. 제작자는 Ender Dragon 처치 실행을 기록한다. | Survival·Peaceful 설정과 정해진 seed·알려진 좌표를 사용한다. Mineflayer가 이동과 게임 프로토콜을 처리한다. 녹화와 원본 실행 증거는 로컬에 보관하며 저장소에는 포함하지 않는다. |
-| 2026-10-12 | [Kev 고객 문의 추가 학습](https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/skills/kev-finetune/README.md) | 문의에 대한 세 질문을 학습한 예제에서 정확도 67.7% → 73.6%, 오류 예산 5%일 때 자동 처리 비중 34% → 48%를 보고했다. | 생성 데이터 1,050개, H100에서 15분 학습한 특정 업무 예제이다. 데이터 400개에서는 개선이 잡음 범위 안이었다. |
-| 2026-10-12 | [Kev 금융 민원 데이터 학습](https://huggingface.co/jaredpalmer/kev-4b) | CFPB 민원 문서로 상품·주요 문제를 분류하는 질문을 학습했다. | 학습 기록의 실제 민원 5,219개는 투자 예측이나 수익률 실험을 뜻하지 않는다. 다른 문서로 옮겼을 때의 품질은 별도로 봐야 한다. |
-| 2026-10-12 | [OpenJev 브라우저 단계 평가](https://huggingface.co/alanhuangya/OpenJev-1.7B) | 다음 조작과 대상 요소를 고르는 데 사용했다. Mind2Web 평가에서 두 선택을 모두 맞힌 단계 비율 68.2%를 보고했다. | 873개 요청의 단계 평가이다. 후보 요소는 에이전트가 추렸고, 이는 브라우저 과제 전체의 완료율이 아니다. Jev 자체와는 비교하지 않았다. |
-| 2026-10-12 | [Mica Tetris 데모](https://huggingface.co/sky7350/Mica-v0.1-4B#demo-tetris-mica-vs-n) | 같은 조각과 선택지로 진행한 쉬운 설정에서 세 seed의 제거 줄 합계가 Mica 223, Kev-4B 55, Laya 17이었다. | 세 seed의 특정 게임 설정이다. 코드·로그·영상 생성기가 공개돼 있지만 다른 게임이나 NPC의 품질로 일반화할 수 없다. |
-| 2026-10-12 | [TypeSafe Doom·Wikiracing 데모](https://typesafe.ai/blog/introducing-system-one-models-and-jev#fun-demos) | 게임 행동 또는 현재 페이지의 링크를 골랐다. | Doom은 구조화된 상태를 받으며 화면 인식 데모가 아니다. Wikiracing은 많은 후보에서 점수화 후 선택하는 두 단계도 사용했다. |
-| 2026-10-12 | [jevman Pac-Man 비교](https://github.com/opper-ai/jevman-benchmark/tree/b202e2cefd3dcf62b99835b319450b687960f40a) | 이동 선택과 위험 회피를 결정 모델에 맡기고 게임 기록·지연·점수를 비교한다. | 응답이 제때 오지 않으면 규칙 기반 동작이 대신한다. 모델 점수와 함께 이런 대체 동작의 조건도 읽어야 한다. |
+| 2026-10-15 | <span id="case-mantella"></span>Mantella | Skyrim·Fallout 4의 NPC 대화에 음성 인식, LLM, 음성 합성을 연결한다. | 공식 안내는 로컬 모델과 외부 API를 모두 지원한다. [공식 소개](https://art-from-the-machine.github.io/Mantella/), [코드](https://github.com/art-from-the-machine/Mantella/tree/c0c1ae6db01f3c2a14dbab8ec5c3e6419e4f6bac) |
+| 2026-10-15 | <span id="case-chim"></span>CHIM | Skyrim의 NPC 대화·세계 상태·게임 내 행동을 연결한다. | 공식 가이드는 DwemerDistro 내부의 LLM Studio 또는 별도 LM Studio·KoboldCPP 연결을 안내한다. [로컬 모델 가이드](https://github.com/Dwemer-Dynamics/DwemerDynamics/blob/89aa67ae371e2e33d27cd576921dc1d5fdfd3820/chim/local-llm-guide.html), [기능 소개](https://github.com/Dwemer-Dynamics/DwemerDynamics/blob/89aa67ae371e2e33d27cd576921dc1d5fdfd3820/chim/index.html) |
+| 2026-10-15 | <span id="case-astra-minecraft"></span>[Astra・Jev Minecraft agent](https://github.com/rmalde/minecraft-agent/tree/78b40ed59514e5e2abde33a05ce398ecb2c39e05) | Astra가 목표를 계획하고 Jev가 행동을 선택한다. 제작자는 Ender Dragon 처치 실행을 기록한다. | Survival·Peaceful 설정과 정해진 seed·알려진 좌표를 사용한다. Mineflayer가 이동과 게임 프로토콜을 처리한다. 녹화와 원본 실행 증거는 로컬에 보관하며 저장소에는 포함하지 않는다. |
+| 2026-10-12 | <span id="case-kev-customer-support"></span>[Kev 고객 문의 추가 학습](https://github.com/jaredpalmer/kev/blob/2ecafc49fe1e8945cd600443e6c04c1cf0b3a78f/skills/kev-finetune/README.md) | 문의에 대한 세 질문을 학습한 예제에서 정확도 67.7% → 73.6%, 오류 예산 5%일 때 자동 처리 비중 34% → 48%를 보고했다. | 생성 데이터 1,050개, H100에서 15분 학습한 특정 업무 예제이다. 데이터 400개에서는 개선이 잡음 범위 안이었다. |
+| 2026-10-12 | <span id="case-kev-cfpb"></span>[Kev 금융 민원 데이터 학습](https://huggingface.co/jaredpalmer/kev-4b) | CFPB 민원 문서로 상품·주요 문제를 분류하는 질문을 학습했다. | 학습 기록의 실제 민원 5,219개는 투자 예측이나 수익률 실험을 뜻하지 않는다. 다른 문서로 옮겼을 때의 품질은 별도로 봐야 한다. |
+| 2026-10-12 | <span id="case-openjev-browser"></span>[OpenJev 브라우저 단계 평가](https://huggingface.co/alanhuangya/OpenJev-1.7B) | 다음 조작과 대상 요소를 고르는 데 사용했다. Mind2Web 평가에서 두 선택을 모두 맞힌 단계 비율 68.2%를 보고했다. | 873개 요청의 단계 평가이다. 후보 요소는 에이전트가 추렸고, 이는 브라우저 과제 전체의 완료율이 아니다. Jev 자체와는 비교하지 않았다. |
+| 2026-10-12 | <span id="case-mica-tetris"></span>[Mica Tetris 데모](https://huggingface.co/sky7350/Mica-v0.1-4B#demo-tetris-mica-vs-n) | 같은 조각과 선택지로 진행한 쉬운 설정에서 세 seed의 제거 줄 합계가 Mica 223, Kev-4B 55, Laya 17이었다. | 세 seed의 특정 게임 설정이다. 코드·로그·영상 생성기가 공개돼 있지만 다른 게임이나 NPC의 품질로 일반화할 수 없다. |
+| 2026-10-12 | <span id="case-typesafe-demos"></span>[TypeSafe Doom·Wikiracing 데모](https://typesafe.ai/blog/introducing-system-one-models-and-jev#fun-demos) | 게임 행동 또는 현재 페이지의 링크를 골랐다. | Doom은 구조화된 상태를 받으며 화면 인식 데모가 아니다. Wikiracing은 많은 후보에서 점수화 후 선택하는 두 단계도 사용했다. |
+| 2026-10-12 | <span id="case-jevman"></span>[jevman Pac-Man 비교](https://github.com/opper-ai/jevman-benchmark/tree/b202e2cefd3dcf62b99835b319450b687960f40a) | 이동 선택과 위험 회피를 결정 모델에 맡기고 게임 기록·지연·점수를 비교한다. | 응답이 제때 오지 않으면 규칙 기반 동작이 대신한다. 모델 점수와 함께 이런 대체 동작의 조건도 읽어야 한다. |
 
 <!-- 새 사례는 수집일·역할·보고된 결과·조건·원문 버전을 붙여 이 표에 추가한다. 같은 사례를 다시 확인할 때도 이전 수집일과 기록을 보존한다. -->
 
@@ -102,3 +106,4 @@ Minecraft Agent Lab은 [7be99fa 버전](https://github.com/LeeJeaHyuk/minecraft-
 | --- | --- |
 | 2026-10-12 | Jev·Kev·OpenJev·Mica의 공개 자료, 업무 적용과 Tetris·Doom·Pac-Man 사례를 수집했다. |
 | 2026-10-15 | Mantella·CHIM과 Astra·Jev Minecraft 사례를 추가하고, 사례별 수집일을 표시한 누적 목록으로 통합했다. |
+| 2026-10-16 | 사례별 바로가기를 추가하고, 생각 글의 사례 링크를 해당 항목에 연결했다. |
