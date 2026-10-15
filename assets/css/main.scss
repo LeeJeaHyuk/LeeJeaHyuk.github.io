@@ -446,6 +446,22 @@ input:focus-visible {
   font-size: 15px;
 }
 
+.page__content .reference-case {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid var(--notes-border);
+  border-radius: 6px;
+}
+
+.page__content .reference-case h3,
+.page__content .reference-case h4 {
+  margin-top: 0;
+}
+
+.page__content .reference-case > :last-child {
+  margin-bottom: 0;
+}
+
 .page__meta,
 .page__date {
   color: var(--notes-muted);
