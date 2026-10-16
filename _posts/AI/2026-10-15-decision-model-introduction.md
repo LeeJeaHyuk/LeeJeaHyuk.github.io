@@ -7,7 +7,7 @@ last_modified_at: 2026-10-16
 categories: [AI]
 tags: [생각, Jev, Kev, DecisionModel, AIAgent, Minecraft]
 permalink: /ai/decision-model-introduction/
-excerpt: "Jev를 발견하고 조사한 뒤 기존 시스템과 게임에 적용해본 과정을 기록한다."
+excerpt: "Jev를 발견하고 조사한 뒤 기존 시스템과 게임에 적용해본 과정"
 toc: false
 ---
 

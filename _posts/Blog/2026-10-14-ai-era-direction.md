@@ -7,7 +7,7 @@ last_modified_at: 2026-10-14
 categories: [Blog]
 tags: [생각, AI, 블로그, 회고]
 permalink: /blog/ai-era-direction/
-excerpt: "내 생각을 정리하고 스스로 피드백할 수 있는 공간으로 블로그를 활용하려 한다."
+excerpt: "내 생각을 정리하고 스스로 피드백할 수 있는 공간"
 toc: false
 ---
 
